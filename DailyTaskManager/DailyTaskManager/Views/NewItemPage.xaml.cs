@@ -17,11 +17,7 @@ namespace DailyTaskManager.Views
         {
             InitializeComponent();
 
-            Item = new Item
-            {
-                Text = "Item name",
-                Description = "This is an item description."
-            };
+            Item = new Item("Item 1", "This is an item description.", "intec", DateTime.Parse("05/11/18"), 2);
 
             BindingContext = this;
         }

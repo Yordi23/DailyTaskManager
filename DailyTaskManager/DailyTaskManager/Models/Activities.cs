@@ -10,7 +10,7 @@ public class Activities: ICore
     private DateTime _date;
     private Rules _warningRules;
     private Byte _priority;
-    
+
     public Activities(string name,string description, string place, DateTime date, byte priority)
     {
         _pendent = true;
