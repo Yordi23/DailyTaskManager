@@ -14,8 +14,10 @@ namespace DailyTaskManager.Views
         {
             InitializeComponent();
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
-             .SetBarItemColor(Color.Black)
-             .SetBarSelectedItemColor(Color.Red);
+             .SetBarItemColor(Color.FromHex("3498DB"))
+             .SetBarSelectedItemColor(Color.FromHex("3498DB"))
+             .SetIsSwipePagingEnabled(false);
+
         }
     }
 }

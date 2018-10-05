@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DailyTaskManager.Views.HomePage"
-             Title="Inicio" 
              BackgroundColor="#FFFFFF"
              Icon="homex.png" WidthRequest="30" HeightRequest="30"
              >
@@ -11,14 +10,14 @@
         <StackLayout Spacing="0">
             <StackLayout BackgroundColor="#3498DB">
                 <!-- <Image Margin="0,30,0,0" Source="Calendar.png" Aspect="AspectFit"/> -->
-                <Image Source="Calendar.png" Margin="0,30,0,0" Grid.RowSpan="6" Grid.Row="0" Grid.Column="0" />
-                <Label x:Name="lblDate" Text="Domingo, 29, Octubre" Margin="0,0,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF"/>
-                <Label Text="Inicio" Margin="0,-8,0,3" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF" FontSize="36"/>
+                <Image Source="calendar.png" WidthRequest="96" HeightRequest="96" Margin="0,30,0,0" Grid.RowSpan="6" Grid.Row="0" Grid.Column="0"/>
+                <Label x:Name="lblDate" Text="Domingo 29, Octubre" Margin="0,0,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF"/>
+                <Label Text="Inicio" Margin="0,-8,0,3" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF" FontSize="28"/>
             </StackLayout>
             
             <StackLayout BackgroundColor="#ecf0f1" Margin="0,0,0,20">
-                <Label Text="Resumen" Margin="0,3,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="24"/>
-                <Label Text="de la semana" Margin="0,-8,0,5" Style="{StaticResource lblStyleDefault}" TextColor="#000000"/>
+                <Label Text="Resumen" Margin="0,3,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="18"/>
+                <Label Text="de la semana" Margin="0,-8,0,5" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="14"/>
             </StackLayout>
 
             <StackLayout>
