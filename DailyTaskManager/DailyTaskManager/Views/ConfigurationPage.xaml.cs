@@ -15,6 +15,7 @@ namespace DailyTaskManager.Views
 		public ConfigurationPage ()
 		{
 			InitializeComponent ();
-		}
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
 	}
 }

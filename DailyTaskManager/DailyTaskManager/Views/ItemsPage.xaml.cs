@@ -21,7 +21,7 @@ namespace DailyTaskManager.Views
         public ItemsPage()
         {
             InitializeComponent();
-
+            NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = viewModel = new ItemsViewModel();
         }
 

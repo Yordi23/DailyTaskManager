@@ -15,6 +15,7 @@ namespace DailyTaskManager.Views
 		public HomePage ()
 		{
 			InitializeComponent ();
-		}
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
 	}
 }
