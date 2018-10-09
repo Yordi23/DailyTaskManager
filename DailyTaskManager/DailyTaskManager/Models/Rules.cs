@@ -3,8 +3,8 @@
 public class Rules: ICore
 {   
     
-    private string name;
-    private string description;
+    private string _name;
+    private string _description;
 
 	public Rules()
 	{

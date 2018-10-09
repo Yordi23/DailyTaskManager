@@ -2,7 +2,7 @@
 
 namespace DailyTaskManager.Models
 {
-    public class Item
+    public class Item: ICore
     {
         private int _id;
         private string _rowId;
