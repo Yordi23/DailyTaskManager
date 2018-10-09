@@ -16,11 +16,11 @@ namespace DailyTaskManager.Services
             var mockItems = new List<Item>
             {
                 new Item("Estudiar mat", "Realizar los estudios de las unidades 5, 6, 7 de algebra",
-                "INTEC", DateTime.Parse("10/3/18"), 5),
+                "INTEC", DateTime.Parse("10/3/18"), 5,1,"r1"),
                 new Item("Estudiar prob", "Realizar los estudios de las unidades boa",
-                    "INTEC", DateTime.Parse("10/3/18"), 2),
+                    "INTEC", DateTime.Parse("10/3/18"), 2,2,"r2"),
                 new Item("Estudiar fisica", "Realizar los estudios de las unidades lee",
-                    "INTEC", DateTime.Parse("10/3/18"), 0),
+                    "INTEC", DateTime.Parse("10/3/18"), 0,3,"r3"),
             };
 
             foreach (var item in mockItems)
@@ -47,9 +47,11 @@ namespace DailyTaskManager.Services
 
         public async Task<bool> DeleteItemAsync(string id)
         {
+            Console.WriteLine(items.Count);
             var oldItem = items.Where((Item arg) => arg.RowId == id).FirstOrDefault();
+            Console.WriteLine(oldItem.GetID());
             items.Remove(oldItem);
-
+            Console.WriteLine(items.Count);
             return await Task.FromResult(true);
         }
 

@@ -26,6 +26,18 @@ namespace DailyTaskManager.Models
             _priority = priority;
 
         }
+        public Item(string name, string description, string place, DateTime date, byte priority,int id,string rid)
+        {
+            _pendent = true;
+            _id = id;
+            _rowId = rid;
+            _name = name;
+            _description = description;
+            _place = place;
+            _date = date;
+            _priority = priority;
+
+        }
         public string Name
         {
             get => _name;
@@ -62,7 +74,7 @@ namespace DailyTaskManager.Models
         }
         public void AddRule(Rules rule)
         {
-
+            
         }
 
         public void Remove(string rowId)
@@ -82,7 +94,7 @@ namespace DailyTaskManager.Models
 
         public string GetRowId()
         {
-            return "algoai";
+            return _rowId;
         }
     }
 }

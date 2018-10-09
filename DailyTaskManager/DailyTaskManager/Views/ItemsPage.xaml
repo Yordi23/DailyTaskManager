@@ -2,8 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DailyTaskManager.Views.ItemsPage"
-             xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
-             xmlns:lb="clr-namespace:XLabs.Forms.Behaviors;assembly=XLabs.Forms">
              x:Name="BrowseItemsPage"
              BackgroundColor="#FFFFFF"
              >
@@ -34,7 +32,7 @@
                 <Label Text="Resumen" Margin="0,3,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="18"/>
                 <Label Text="de la semana" Margin="0,-8,0,5" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="14"/>
             </StackLayout>
-            
+
             <StackLayout>
 
                 <ListView x:Name="ItemsListView" 

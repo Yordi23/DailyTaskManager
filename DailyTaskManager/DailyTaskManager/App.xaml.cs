@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DailyTaskManager.Views;
-
+using DailyTaskManager.Services;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DailyTaskManager
 {
@@ -13,7 +13,7 @@ namespace DailyTaskManager
         {
             InitializeComponent();
 
-
+            
             MainPage = new MainPage();
         }
 

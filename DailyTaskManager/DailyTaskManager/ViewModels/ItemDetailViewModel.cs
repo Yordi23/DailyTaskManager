@@ -12,6 +12,9 @@ namespace DailyTaskManager.ViewModels
             Title = item.Name;
             Item = item;
             
+
         }
+        
+
     }
 }
