@@ -22,7 +22,14 @@
             </StackLayout>
 
             <StackLayout>
-
+                <StackLayout>
+                    <Label Text="Tiempo libre de hoy:" TextColor="Black" />
+                    <ListView />
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Actividades pendientes:" TextColor="Black"  />
+                    <ListView />
+                </StackLayout>
             </StackLayout>
 
 

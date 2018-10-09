@@ -17,5 +17,11 @@ namespace DailyTaskManager.Views
 			InitializeComponent ();
             NavigationPage.SetHasNavigationBar(this, false);
         }
-	}
+
+        public void ShowTimePage()
+        {
+            Navigation.PushAsync(new TimePage());
+
+        }
+    }
 }
