@@ -33,9 +33,9 @@ namespace DailyTaskManager.Views
         private void DeleteActivity(object sender, EventArgs e)
         {   
             
-            var answer = DisplayAlert("Works?", viewModel.Item.GetRowId(), "Yes", "No");
-            viewModel.DataStore.DeleteItemAsync(viewModel.Item.GetRowId());
-            var dos = DisplayAlert("Works?", viewModel.Item.GetRowId(), "Yes", "No");
+            var answer = DisplayAlert("Works?", viewModel.Item.Id.ToString(), "Yes", "No");
+            viewModel.DataStore.DeleteItemAsync(viewModel.Item.Id.ToString());
+            var dos = DisplayAlert("Works?", viewModel.Item.Id.ToString(), "Yes", "No");
         }
         
         private void CompleteActivity(object sender, EventArgs e)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DailyTaskManager.Models;
-using DailyTaskManager.Models.Sqlite;
+using DailyTaskManager.Services.Sqlite;
 
 namespace DailyTaskManager.Services
 {
@@ -14,14 +14,16 @@ namespace DailyTaskManager.Services
         public MockDataStore()
         {
             items = new List<Item>();
-            SqliteService sqlite = new SqliteService();
-            var mockItems = new List<Item>(){
-                new Item(),new Item(),new Item()
-            };
-
-            foreach (var item in mockItems)
+            //SqliteService sqlite = new SqliteService();
+            List<Activities> mockItems = new List<Activities>();
+            using(var data = new DataAccess())
             {
-                items.Add(item);
+                mockItems = data.GetActivities();
+            }
+            foreach (var activity in mockItems)
+            {
+                Item it = new Item(activity.Id,activity.RowId, activity.Pendiente,activity.Nombre, activity.Descripcion, activity.Lugar, activity.Fecha, activity.Reglas,activity.Prioridad);
+                items.Add(it);
             }
 
         }
@@ -35,7 +37,7 @@ namespace DailyTaskManager.Services
 
         public async Task<bool> UpdateItemAsync(Item item)
         {
-            var oldItem = items.Where((Item arg) => arg.RowId == item.RowId).FirstOrDefault();
+            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
             items.Remove(oldItem);
             items.Add(item);
 
@@ -45,7 +47,7 @@ namespace DailyTaskManager.Services
         public async Task<bool> DeleteItemAsync(string id)
         {
             Console.WriteLine(items.Count);
-            var oldItem = items.Where((Item arg) => arg.RowId == id).FirstOrDefault();
+            var oldItem = items.Where((Item arg) => arg.Id.ToString() == id).FirstOrDefault();
             Console.WriteLine(oldItem.GetID());
             items.Remove(oldItem);
             Console.WriteLine(items.Count);
@@ -54,7 +56,7 @@ namespace DailyTaskManager.Services
 
         public async Task<Item> GetItemAsync(string id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.RowId == id));
+            return await Task.FromResult(items.FirstOrDefault(s => s.Id.ToString() == id));
         }
 
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)

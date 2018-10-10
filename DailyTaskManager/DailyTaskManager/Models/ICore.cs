@@ -3,7 +3,7 @@
 public interface ICore
 {
     int GetID();
-    string GetRowId();
+    //string GetRowId();
     void Remove(string rowId);
     void Modify(string rowId);
 }
