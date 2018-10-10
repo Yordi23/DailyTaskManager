@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using DailyTaskManager.Models.DB;
 using SQLite;
 
 namespace DailyTaskManager.Models
@@ -13,7 +15,7 @@ namespace DailyTaskManager.Models
         private string _description;
         private string _place;
         private DateTime _date;
-        private Rules _warningRules;
+        private List<Rules> _warningRules;
         private Byte _priority;
         public string RowId { get => _rowId; set => _rowId = value; }
         public bool Pendent { get => _pendent; set => _pendent = value; }
@@ -21,7 +23,7 @@ namespace DailyTaskManager.Models
         public string Description { get => _description; set => _description = value; }
         public string Place { get => _place; set => _place = value; }
         public DateTime Date { get => _date; set => _date = value; }
-        public Rules WarningRules { get => _warningRules; set => _warningRules = value; }
+        public List<Rules> WarningRules { get => _warningRules; set => _warningRules = value; }
         public byte Priority { get => _priority; set => _priority = value; }
         public int Id { get => _id; set => _id = value; }
 
@@ -42,7 +44,7 @@ namespace DailyTaskManager.Models
 
         }
 
-        public Item(int id,string rid, bool pendent, string name, string description, string place, DateTime date, Rules warningRules, byte priority)
+        public Item(int id,string rid, bool pendent, string name, string description, string place, DateTime date, List<Rules> warningRules, byte priority)
         {
             _id = id;
             _rowId = rid;

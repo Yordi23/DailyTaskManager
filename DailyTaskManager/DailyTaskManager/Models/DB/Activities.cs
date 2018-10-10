@@ -1,4 +1,4 @@
-﻿using SQLite.Net.Attributes;
+﻿using SQLite;
 using System;
 public class Activities 
 {   
@@ -10,7 +10,6 @@ public class Activities
     public string Descripcion { get; set; }
     public string Lugar { get; set; } 
     public DateTime Fecha { get; set; }
-    public Rules Reglas { get; set; }
     public Byte Prioridad { get; set; }
 
     public override string ToString() {

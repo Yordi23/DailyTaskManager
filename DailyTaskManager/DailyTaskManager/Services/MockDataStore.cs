@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DailyTaskManager.Models;
+using DailyTaskManager.Models.DB;
 using DailyTaskManager.Services.Sqlite;
 
 namespace DailyTaskManager.Services
@@ -16,13 +17,18 @@ namespace DailyTaskManager.Services
             items = new List<Item>();
             //SqliteService sqlite = new SqliteService();
             List<Activities> mockItems = new List<Activities>();
-            using(var data = new DataAccess())
+            List<Rules> RulesList = new List<Rules>();
+            using (var data = new DataAccess())
             {
                 mockItems = data.GetActivities();
             }
             foreach (var activity in mockItems)
             {
-                Item it = new Item(activity.Id,activity.RowId, activity.Pendiente,activity.Nombre, activity.Descripcion, activity.Lugar, activity.Fecha, activity.Reglas,activity.Prioridad);
+                using (var data = new DataAccess())
+                {
+                    RulesList = data.GetRules(activity.Id);
+                }
+                Item it = new Item(activity.Id,activity.RowId, activity.Pendiente,activity.Nombre, activity.Descripcion, activity.Lugar, activity.Fecha, RulesList, activity.Prioridad);
                 items.Add(it);
             }
 

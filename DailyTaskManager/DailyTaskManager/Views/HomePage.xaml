@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="DailyTaskManager.Views.HomePage"
              BackgroundColor="#FFFFFF"
              Icon="homex.png" WidthRequest="30" HeightRequest="30"
@@ -11,11 +10,11 @@
         <StackLayout Spacing="0">
             <StackLayout BackgroundColor="#3498DB">
                 <!-- <Image Margin="0,30,0,0" Source="Calendar.png" Aspect="AspectFit"/> -->
-                <Image Source="calendarx.png" WidthRequest="86" HeightRequest="86" Margin="0,30,0,0" Grid.RowSpan="6" Grid.Row="0" Grid.Column="0"/>
+                <Image Source="calendar.png" WidthRequest="96" HeightRequest="96" Margin="0,30,0,0" Grid.RowSpan="6" Grid.Row="0" Grid.Column="0"/>
                 <Label x:Name="lblDate" Text="Domingo 29, Octubre" Margin="0,0,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF"/>
                 <Label Text="Inicio" Margin="0,-8,0,3" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF" FontSize="28"/>
             </StackLayout>
-
+            
             <StackLayout BackgroundColor="#ecf0f1" Margin="0,0,0,20">
                 <Label Text="Resumen" Margin="0,3,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="18"/>
                 <Label Text="de la semana" Margin="0,-8,0,5" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="14"/>
@@ -30,15 +29,14 @@
                         <RowDefinition Height="40" />
                         <RowDefinition Height="15" />
                         <RowDefinition Height="40" />
+
                     </Grid.RowDefinitions>
-                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    
-                    <!--Profile Picture Circular-->
-                    <controls:CircleImage Source="https://imgur.com/LmXfzK0.jpg" Aspect="AspectFill" BorderColor="#2C3E50" BorderThickness="2" Margin="17,0,0,0" Grid.RowSpan="6" Grid.Column="0" Grid.Row="0"/>
+                    <Image Source="UserBig.png" Margin="17,0,0,0" Grid.RowSpan="6" Grid.Row="0" Grid.Column="0" />
+
                     <Label Text="Tareas Completadas " Margin="0,0,0,0" TextColor="#2C3E50" Grid.Row="0" Grid.Column="1"/>
                     <Label x:Name="lblCompletedTasks" Margin="20,0,0,0" Text="24/27 " TextColor="#2980B9" FontSize="22" Grid.Row="1" Grid.Column="1"/>
 
@@ -47,8 +45,12 @@
 
                     <Label Text="Rendimiento " Margin="20,0,0,0" TextColor="#2C3E50" Grid.Row="4" Grid.Column="1"/>
                     <Label x:Name="lblPerformance" Margin="10,0,0,0" Text="89%" TextColor="#2980B9" FontSize="22" Grid.Row="5" Grid.Column="1"/>
+
                 </Grid>
             </StackLayout>
+
+
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

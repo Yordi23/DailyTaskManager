@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -10,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using DailyTaskManager.Services.Sqlite;
-using SQLite.Net.Interop;
+using SQLite;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(DailyTaskManager.Droid.Config))]
@@ -19,29 +20,15 @@ namespace DailyTaskManager.Droid
 {
     class Config : IConfig
     {
-        private string DirectoryDB;
-        private ISQLitePlatform platform;
 
-        public string DBDirectory
+        public SQLiteConnection Connection
         {
             get
             {
-                if (string.IsNullOrEmpty(DirectoryDB)){
-                    DirectoryDB = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-                }
-                return DirectoryDB;
-            }
-        }
-
-        public ISQLitePlatform Platform
-        {
-            get
-            {
-                if (platform == null)
-                {
-                    platform = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid();
-                }
-                return platform;
+                string location = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+                string direction = Path.Combine(location, "DAGDB.db3");
+                SQLiteConnection con = new SQLiteConnection(direction,true);
+                return con;
             }
         }
     }
