@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite.Net;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
@@ -6,7 +7,6 @@ using System.IO;
 using DailyTaskManager.Models;
 using System.Linq;
 using DailyTaskManager.Models.DB;
-using SQLite;
 
 namespace DailyTaskManager.Services.Sqlite
 {
@@ -17,8 +17,7 @@ namespace DailyTaskManager.Services.Sqlite
         public DataAccess()
         {
             var config = DependencyService.Get<IConfig>();
-            //SQLiteConnectionString cString = new SQLiteConnectionString(,storeDateTimeAsTicks:true);
-            connection = DependencyService.Get<IConfig>().Connection;
+            connection = new SQLiteConnection(config.Platform, Path.Combine(config.DBDirectory, "DAGDB.db3"));
             connection.CreateTable<Activities>();
             connection.CreateTable<Rules>();
         }
@@ -53,24 +52,24 @@ namespace DailyTaskManager.Services.Sqlite
             connection.Insert(rul);
         }
 
-        public void UpdateRule(Rules act)
+        public void UpdateRule(Activities act)
         {
             connection.Update(act);
         }
 
-        public void DeleteRule(Rules act)
+        public void DeleteRule(Activities act)
         {
             connection.Delete(act);
         }
 
-        public Rules GetRule(int idActv,int idRule)
+        public RulesModel GetRule(int idActv,int idRule)
         {
-            return connection.Table<Rules>().FirstOrDefault(a => a.BindId == idActv && a.Id == idRule);
+            return connection.Table<RulesModel>().FirstOrDefault(a => a.BindId == idActv && a.Id == idRule);
         }
 
-        public List<Rules> GetRules(int idActv)
+        public List<RulesModel> GetRules(int idActv)
         {
-            return connection.Table<Rules>().Where(a => a.BindId == idActv).ToList();
+            return connection.Table<RulesModel>().Where(a => a.BindId == idActv).ToList();
         }
 
         public void Dispose()
