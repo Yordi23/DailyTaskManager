@@ -6,7 +6,7 @@
         <StackLayout Spacing="0">
             <StackLayout BackgroundColor="#3498DB">
                 <!-- <Image Margin="0,30,0,0" Source="Calendar.png" Aspect="AspectFit"/> -->
-                <Image Source="calendarx.png" WidthRequest="86" HeightRequest="86" Margin="0,30,0,0" Grid.RowSpan="6" Grid.Row="0" Grid.Column="0"/>
+                <Image Source="calendar.png" WidthRequest="96" HeightRequest="96" Margin="0,30,0,0" Grid.RowSpan="6" Grid.Row="0" Grid.Column="0"/>
                 <Label x:Name="lblDate" Text="Domingo 29, Octubre" Margin="0,0,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF"/>
                 <Label Text="Configuración" Margin="0,-8,0,3" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF" FontSize="28"/>
             </StackLayout>
