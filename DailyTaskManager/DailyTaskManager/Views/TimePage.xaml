@@ -65,9 +65,9 @@
                 <controls:CheckBox Grid.Row="12" Grid.Column="1"/>
 
                 <Label Text="PM" TextColor="#2C3E50" Grid.Row="0" Grid.Column="2"/>
-                <controls:CheckBox BackgroundColor="AliceBlue" Grid.Row="1" Grid.Column="2"/>
-                <controls:CheckBox TextColor="Azure" Grid.Row="2" Grid.Column="2"/>
-                <controls:CheckBox Style="Focused" Grid.Row="3" Grid.Column="2"/>
+                <controls:CheckBox Grid.Row="1" Grid.Column="2"/>
+                <controls:CheckBox Grid.Row="2" Grid.Column="2"/>
+                <controls:CheckBox Grid.Row="3" Grid.Column="2"/>
                 <controls:CheckBox Grid.Row="4" Grid.Column="2"/>
                 <controls:CheckBox Grid.Row="5" Grid.Column="2"/>
                 <controls:CheckBox Grid.Row="6" Grid.Column="2"/>
