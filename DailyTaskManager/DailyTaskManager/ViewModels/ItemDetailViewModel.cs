@@ -9,8 +9,12 @@ namespace DailyTaskManager.ViewModels
         public Item Item { get; set; }
         public ItemDetailViewModel(Item item = null)
         {
-            Title = item?.Description;
+            Title = item.Name;
             Item = item;
+            
+
         }
+        
+
     }
 }

@@ -11,14 +11,23 @@
                 <Label Text="Configuración" Margin="0,-8,0,3" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF" FontSize="28"/>
             </StackLayout>
 
-            <StackLayout BackgroundColor="#ecf0f1" Margin="0,0,0,20">
+            <StackLayout BackgroundColor="#ecf0f1" Margin="0,0,0,0">
                 <Label Text="Ajustes" Margin="0,3,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="18"/>
                 <Label Text="del app" Margin="0,-8,0,5" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="14"/>
             </StackLayout>
-            <StackLayout>
+            <StackLayout BackgroundColor="White">
+                <ListView ItemSelected="ShowTimePage">
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Ajustes de tiempo</x:String>
+                            <x:String>Estilo</x:String>
+                            <x:String>Estilo</x:String>
+
+                        </x:Array>
+                    </ListView.ItemsSource>
+                </ListView>
             </StackLayout>
 
         </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>

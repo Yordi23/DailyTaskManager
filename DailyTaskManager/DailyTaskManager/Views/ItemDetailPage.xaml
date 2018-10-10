@@ -4,9 +4,18 @@
              x:Class="DailyTaskManager.Views.ItemDetailPage"
              Title="{Binding Title}">
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Actividad:" FontSize="Medium" />
-        <Label Text="{Binding Item.Name}" FontSize="Small"/>
-        <Label Text="Descripción:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" FontSize="Small"/>
+        <StackLayout  >
+            <Label Text="Nombre: " FontSize="Medium" />
+            <Label Text="{Binding Item.Name}" FontSize="Small"/>
+            <Label Text="Descripción:" FontSize="Medium" />
+            <Label Text="{Binding Item.Description}" FontSize="Small"/>
+            <Label Text="Fecha:" FontSize="Medium" />
+            <Label Text="{Binding Item.Date}" FontSize="Small"/>
+        </StackLayout>
+        <StackLayout>
+            <Button x:Name="CompletedBt" Text="Completada" Clicked="CompleteActivity"/>
+            <Button x:Name="DeleteBt" Text="Eliminar" Clicked="DeleteActivity"/>
+        </StackLayout>
     </StackLayout>
+    
 </ContentPage>

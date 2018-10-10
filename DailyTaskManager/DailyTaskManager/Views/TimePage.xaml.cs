@@ -10,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace DailyTaskManager.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class HomePage : ContentPage
+	public partial class TimePage : ContentPage
 	{
-		public HomePage ()
+		public TimePage ()
 		{
 			InitializeComponent ();
-            NavigationPage.SetHasNavigationBar(this, false);
-        }
+		}
 	}
 }

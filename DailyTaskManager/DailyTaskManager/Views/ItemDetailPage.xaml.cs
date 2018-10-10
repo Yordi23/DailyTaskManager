@@ -1,8 +1,7 @@
 ﻿using System;
-
+using DailyTaskManager.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
 using DailyTaskManager.Models;
 using DailyTaskManager.ViewModels;
 
@@ -16,18 +15,32 @@ namespace DailyTaskManager.Views
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
             InitializeComponent();
-
+            NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = this.viewModel = viewModel;
         }
-
+        /*
         public ItemDetailPage()
         {
             InitializeComponent();
 
-            var item = new Item("Item 1", "This is an item description.", "intec", DateTime.Parse("05/11/18"), 2);
+            var item = new Item("Vacio", "No existe nada que mostrar en esta actividad, intente más tarde",
+                "INTEC", DateTime.Parse("01/01/01"), 0);
 
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
+        }*/
+
+        private void DeleteActivity(object sender, EventArgs e)
+        {   
+            
+            var answer = DisplayAlert("Works?", viewModel.Item.GetRowId(), "Yes", "No");
+            viewModel.DataStore.DeleteItemAsync(viewModel.Item.GetRowId());
+            var dos = DisplayAlert("Works?", viewModel.Item.GetRowId(), "Yes", "No");
+        }
+        
+        private void CompleteActivity(object sender, EventArgs e)
+        {
+            viewModel.Item.Complete();
         }
     }
 }
