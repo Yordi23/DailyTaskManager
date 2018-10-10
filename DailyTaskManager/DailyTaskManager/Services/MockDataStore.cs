@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DailyTaskManager.Models;
+using DailyTaskManager.Models.Sqlite;
 
 namespace DailyTaskManager.Services
 {
@@ -13,20 +14,16 @@ namespace DailyTaskManager.Services
         public MockDataStore()
         {
             items = new List<Item>();
-            var mockItems = new List<Item>
-            {
-                new Item("Estudiar mat", "Realizar los estudios de las unidades 5, 6, 7 de algebra",
-                "INTEC", DateTime.Parse("10/3/18"), 5,1,"r1"),
-                new Item("Estudiar prob", "Realizar los estudios de las unidades boa",
-                    "INTEC", DateTime.Parse("10/3/18"), 2,2,"r2"),
-                new Item("Estudiar fisica", "Realizar los estudios de las unidades lee",
-                    "INTEC", DateTime.Parse("10/3/18"), 0,3,"r3"),
+            SqliteService sqlite = new SqliteService();
+            var mockItems = new List<Item>(){
+                new Item(),new Item(),new Item()
             };
 
             foreach (var item in mockItems)
             {
                 items.Add(item);
             }
+
         }
 
         public async Task<bool> AddItemAsync(Item item)

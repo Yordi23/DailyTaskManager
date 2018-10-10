@@ -3,6 +3,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DailyTaskManager.Views;
 using DailyTaskManager.Services;
+using DailyTaskManager.Models.Sqlite;
+
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DailyTaskManager
 {
@@ -13,7 +15,7 @@ namespace DailyTaskManager
         {
             InitializeComponent();
 
-            
+            //SqliteService sqlite = new SqliteService();
             MainPage = new MainPage();
         }
 

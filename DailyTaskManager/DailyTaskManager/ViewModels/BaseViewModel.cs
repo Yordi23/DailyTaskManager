@@ -27,6 +27,13 @@ namespace DailyTaskManager.ViewModels
             get { return title; }
             set { SetProperty(ref title, value); }
         }
+        public virtual void OnAppearing(object navigationContext)
+        {
+        }
+
+        public virtual void OnDisappearing()
+        {
+        }
 
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName]string propertyName = "",

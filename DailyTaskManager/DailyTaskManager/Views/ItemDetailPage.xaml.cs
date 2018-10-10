@@ -18,7 +18,7 @@ namespace DailyTaskManager.Views
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = this.viewModel = viewModel;
         }
-
+        /*
         public ItemDetailPage()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace DailyTaskManager.Views
 
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
-        }
+        }*/
 
         private void DeleteActivity(object sender, EventArgs e)
         {   

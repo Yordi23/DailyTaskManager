@@ -1,9 +1,11 @@
 ﻿using System;
+using SQLite;
 
 namespace DailyTaskManager.Models
 {
     public class Item: ICore
     {
+        
         private int _id;
         private string _rowId;
         private bool _pendent;
@@ -13,64 +15,49 @@ namespace DailyTaskManager.Models
         private DateTime _date;
         private Rules _warningRules;
         private Byte _priority;
+        [PrimaryKey]
+        public string RowId { get => _rowId; set => _rowId = value; }
+        public bool Pendent { get => _pendent; set => _pendent = value; }
+        public string Name { get => _name; set => _name = value; }
+        public string Description { get => _description; set => _description = value; }
+        public string Place { get => _place; set => _place = value; }
+        public DateTime Date { get => _date; set => _date = value; }
+        public Rules WarningRules { get => _warningRules; set => _warningRules = value; }
+        public byte Priority { get => _priority; set => _priority = value; }
 
         public Item(string name, string description, string place, DateTime date, byte priority)
         {
-            _pendent = true;
+            Pendent = true;
             _id = GetID();
             _rowId = GetRowId();
-            _name = name;
-            _description = description;
-            _place = place;
+            Name = name;
+            Description = description;
+            Place = place;
             _date = date;
             _priority = priority;
+
+        }
+        public Item()
+        {
 
         }
         public Item(string name, string description, string place, DateTime date, byte priority,int id,string rid)
         {
-            _pendent = true;
+            Pendent = true;
             _id = id;
             _rowId = rid;
-            _name = name;
-            _description = description;
-            _place = place;
+            Name = name;
+            Description = description;
+            Place = place;
             _date = date;
             _priority = priority;
 
         }
-        public string Name
-        {
-            get => _name;
-            set => _name = value;
-        }
-        public string Description
-        {
-            get => _description;
-            set => _description = value;
-        }
-        public string Place
-        {
-            get => _place;
-            set => _place = value;
-        }
-        public string RowId
-        {
-            get => _rowId;
-            set => _rowId = value;
-        }
-        public DateTime Date
-        {
-            get => _date;
-            set => _date = value;
-        }
-        public byte Priority
-        {
-            get => _priority;
-            set => _priority = value;
-        }
+        
+
         public void Complete()
         {
-            _pendent = false;
+            Pendent = false;
         }
         public void AddRule(Rules rule)
         {
@@ -89,7 +76,7 @@ namespace DailyTaskManager.Models
 
         public int GetID()
         {
-            return 2;
+            return _id;
         }
 
         public string GetRowId()

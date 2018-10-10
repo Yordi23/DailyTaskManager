@@ -4,8 +4,6 @@
             xmlns:views="clr-namespace:DailyTaskManager.Views"
             x:Class="DailyTaskManager.Views.MainPage"
             >
-
-
     <TabbedPage.Children>
 
         <NavigationPage >
