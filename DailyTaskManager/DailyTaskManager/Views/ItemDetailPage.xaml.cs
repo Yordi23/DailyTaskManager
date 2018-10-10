@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DailyTaskManager.Models;
 using DailyTaskManager.ViewModels;
+using DailyTaskManager.Services.Sqlite;
 
 namespace DailyTaskManager.Views
 {
@@ -31,11 +32,26 @@ namespace DailyTaskManager.Views
         }*/
 
         private void DeleteActivity(object sender, EventArgs e)
-        {   
+        {
+            Item Item = viewModel.Item;
+            using (var data = new DataAccess())
+            {
+                Activities actividad = new Activities
+                {
+                    Nombre = Item.Name,
+                    Id = Item.Id,
+                    Descripcion = Item.Description,
+                    Fecha = Item.Date,
+                    Lugar = Item.Place,
+                    Pendiente = Item.Pendent,
+                    Prioridad = Item.Priority,
+                    RowId = Item.RowId
+                };
+
+                data.DeleteActivity(actividad);
+                Navigation.PopAsync();
+            }
             
-            var answer = DisplayAlert("Works?", viewModel.Item.Id.ToString(), "Yes", "No");
-            viewModel.DataStore.DeleteItemAsync(viewModel.Item.Id.ToString());
-            var dos = DisplayAlert("Works?", viewModel.Item.Id.ToString(), "Yes", "No");
         }
         
         private void CompleteActivity(object sender, EventArgs e)
