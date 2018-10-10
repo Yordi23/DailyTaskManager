@@ -1,11 +1,11 @@
-﻿using SQLite;
+﻿using SQLite.Net.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DailyTaskManager.Models.DB
 {
-    public class Rules
+    public class RulesModel
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

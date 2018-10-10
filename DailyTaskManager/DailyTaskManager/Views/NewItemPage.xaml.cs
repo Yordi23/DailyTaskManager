@@ -56,6 +56,7 @@ namespace DailyTaskManager.Views
                         Lugar = Item.Place,
                         Pendiente = Item.Pendent,
                         Prioridad = Item.Priority,
+                        Reglas = Item.WarningRules,
                         RowId = CreateRowID()
                     };
 
