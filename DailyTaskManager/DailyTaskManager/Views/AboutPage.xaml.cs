@@ -12,6 +12,9 @@ namespace DailyTaskManager.Views
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            string dia;
+            dia = DateTime.Now.ToString("dddd") + " " + DateTime.Today.Day.ToString();
+            lblDate.Text = dia + ", " + DateTime.Now.ToString("MMMM");
         }
     }
 }

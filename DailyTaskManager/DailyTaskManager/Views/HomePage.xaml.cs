@@ -16,6 +16,9 @@ namespace DailyTaskManager.Views
 		{
 			InitializeComponent ();
             NavigationPage.SetHasNavigationBar(this, false);
+            string Fecha, dia, mes;
+            dia = DateTime.Today.DayOfWeek.ToString() +" "+ DateTime.Today.Day.ToString();
+            lblDate.Text = dia +" "+ DateTime.Today.Month.ToString();
         }
 	}
 }

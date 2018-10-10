@@ -24,6 +24,9 @@ namespace DailyTaskManager.Views
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = viewModel = new ItemsViewModel();
+            string dia;
+            dia = DateTime.Now.ToString("dddd") + " " + DateTime.Today.Day.ToString();
+            lblDate.Text = dia + ", " + DateTime.Now.ToString("MMMM");
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)

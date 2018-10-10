@@ -17,7 +17,7 @@ namespace DailyTaskManager.Views
              .SetBarItemColor(Color.FromHex("3498DB"))
              .SetBarSelectedItemColor(Color.FromHex("3498DB"))
              .SetIsSwipePagingEnabled(true);
-
+            CurrentPage = Children[2];
         }
     }
 }

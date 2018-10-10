@@ -1,6 +1,8 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DailyTaskManager.Views;
+using DailyTaskManager.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DailyTaskManager

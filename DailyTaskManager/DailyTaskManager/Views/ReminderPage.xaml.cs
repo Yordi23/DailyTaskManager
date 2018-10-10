@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,6 +15,9 @@ namespace DailyTaskManager.Views
 		{
 			InitializeComponent ();
             NavigationPage.SetHasNavigationBar(this, false);
+            string dia;
+            dia = DateTime.Now.ToString("dddd") + " " + DateTime.Today.Day.ToString();
+            lblDate.Text = dia + ", " + DateTime.Now.ToString("MMMM");
         }
 	}
 }
