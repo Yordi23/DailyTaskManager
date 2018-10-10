@@ -32,9 +32,7 @@
                 <Label Text="Resumen" Margin="0,3,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="18"/>
                 <Label Text="de la semana" Margin="0,-8,0,5" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="14"/>
             </StackLayout>
-
             <StackLayout>
-
                 <ListView x:Name="ItemsListView" 
                     ItemsSource="{Binding Items}"
                     VerticalOptions="FillAndExpand"
@@ -45,7 +43,6 @@
                     CachingStrategy="RecycleElement"
                     ItemSelected="OnItemSelected"         
                     >
-
                     <ListView.ItemTemplate>
                         <DataTemplate >
                             <ViewCell>
