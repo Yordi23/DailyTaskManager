@@ -2,10 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DailyTaskManager.Views.ReminderPage"
-             
              Icon="timex.png"
              BackgroundColor="#FFFFFF"
-             
              >
     <ContentPage.Content>
         <StackLayout Spacing="0">
@@ -23,12 +21,26 @@
 
             <StackLayout>
                 <StackLayout>
-                    <Label Text="Tiempo libre de hoy:" TextColor="Black" />
-                    <ListView />
+                    <Label Text="Tiempo libre de hoy:" TextColor="Black" Margin="7,0,0,0" FontSize="14"/>
+                    <ListView>
+                        <ListView.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>5:00PM-6:00PM</x:String>
+                                <x:String>8:00PM-10:00PM</x:String>
+                            </x:Array>
+                        </ListView.ItemsSource>
+                    </ListView>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Actividades pendientes:" TextColor="Black"  />
-                    <ListView />
+                    <Label Text="Actividades pendientes:" TextColor="Black" Margin="7,0,0,0" FontSize="14"/>
+                    <ListView>
+                        <ListView.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Proyecto Final Programacion III</x:String>
+                                <x:String>Examen Final Fisica II</x:String>
+                            </x:Array>
+                        </ListView.ItemsSource>
+                    </ListView>
                 </StackLayout>
             </StackLayout>
 

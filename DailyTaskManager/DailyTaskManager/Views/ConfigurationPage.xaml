@@ -19,10 +19,10 @@
                 <ListView ItemSelected="ShowTimePage">
                     <ListView.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
-                            <x:String>Ajustes de tiempo</x:String>
+                            <x:String>Tiempo</x:String>
                             <x:String>Estilo</x:String>
-                            <x:String>Estilo</x:String>
-
+                            <x:String>Perfil</x:String>
+                           
                         </x:Array>
                     </ListView.ItemsSource>
                 </ListView>
