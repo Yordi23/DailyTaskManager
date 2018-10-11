@@ -16,9 +16,9 @@
                 <Label Text="del app" Margin="0,-8,0,5" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="14"/>
             </StackLayout>
             <StackLayout BackgroundColor="White">
-                <ListView ItemSelected="ShowTimePage">
-                    <ListView.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
+                <ListView ItemTapped="ItemTappedHandler" >
+                    <ListView.ItemsSource >
+                        <x:Array Type="{x:Type x:String}" >
                             <x:String>Tiempo</x:String>
                             <x:String>Estilo</x:String>
                             <x:String>Perfil</x:String>

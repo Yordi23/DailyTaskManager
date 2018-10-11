@@ -70,6 +70,15 @@ namespace DailyTaskManager.Views
         {
             Item.Date = (FechaPicker.Date.Day.ToString() + "/" + FechaPicker.Date.Month.ToString() + "/" +
                 FechaPicker.Date.Year.ToString());
+            TxtPlace.Focus();
         }
+
+        public void NextEntry (object sender, EventArgs e)
+        {
+            TxtDescription.Focus();
+        }
+        
+        
+
     }
 }

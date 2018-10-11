@@ -8,10 +8,10 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
-            <Label Text="Nombre" FontSize="Medium"/>
-            <Entry Text="{Binding Item.Name}" FontSize="Small" x:Name="TxtNombre"/>
+            <Label x:Name="label1" Text="Nombre" FontSize="Medium"/>
+            <Entry Text="{Binding Item.Name}" FontSize="Small" x:Name="TxtNombre" ReturnType="Done" Completed="NextEntry"/>
             <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" x:Name="TxtDescription" />
+            <Editor  Text="{Binding Item.Description}" FontSize="Small" Margin="0" x:Name="TxtDescription"  />
             <Label Text="Fecha" FontSize="Medium" />
             <DatePicker x:Name="FechaPicker" DateSelected="FechaPicker_DateSelected" BindingContext="{Binding Item.Date}" />
             <Label Text="Lugar" FontSize="Medium" />
