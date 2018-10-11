@@ -40,12 +40,6 @@ namespace DailyTaskManager.Views
             try
             {
                 MessagingCenter.Send(this, "AddItem", Item);
-                if (TxtDescription.Text.Length == 0 || TxtNombre.Text.Length == 0 || TxtPlace.Text.Length == 0 || TxtPriority.Text.Length == 0)
-                {
-                    await DisplayAlert("Error", "Faltan datos por ingresar", "aceptar");
-                    TxtNombre.Focus();
-                    return;
-                }
                 
                 using (var data = new DataAccess())
                 {
@@ -64,9 +58,9 @@ namespace DailyTaskManager.Views
                 }
                 
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                await DisplayAlert("Error", ex.Message, "aceptar");
+                await DisplayAlert("Error", "Faltan datos por ingresar, tarea no agregada", "aceptar");
             }
             await Navigation.PopModalAsync();
 
