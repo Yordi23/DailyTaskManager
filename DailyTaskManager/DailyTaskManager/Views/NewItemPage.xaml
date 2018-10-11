@@ -9,15 +9,15 @@
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
             <Label x:Name="label1" Text="Nombre" FontSize="Medium"/>
-            <Entry Text="{Binding Item.Name}" FontSize="Small" x:Name="TxtNombre" ReturnType="Done" Completed="NextEntry"/>
+            <Entry Text="{Binding Item.Name}" FontSize="Small" x:Name="TxtNombre" ReturnType="Next" Completed="NextEntry" ClassId="txtNombre"/>
             <Label Text="Description" FontSize="Medium" />
-            <Editor  Text="{Binding Item.Description}" FontSize="Small" Margin="0" x:Name="TxtDescription"  />
+            <Entry  Text="{Binding Item.Description}" FontSize="Small" Margin="0" ReturnType="Next" x:Name="TxtDescription"  Completed="NextEntry" ClassId="txtDescription" />
             <Label Text="Fecha" FontSize="Medium" />
             <DatePicker x:Name="FechaPicker" DateSelected="FechaPicker_DateSelected" BindingContext="{Binding Item.Date}" />
             <Label Text="Lugar" FontSize="Medium" />
-            <Editor Text="{Binding Item.Place}" FontSize="Small" Margin="0" x:Name="TxtPlace" />
+            <Entry Text="{Binding Item.Place}" FontSize="Small" Margin="0" ReturnType="Next" x:Name="TxtPlace" Completed="NextEntry"  ClassId="txtPlace"/>
             <Label Text="Prioridad" FontSize="Medium" />
-            <Editor Text="{Binding Item.Priority}" FontSize="Small" Margin="0" x:Name="TxtPriority"/>
+            <Entry Text="{Binding Item.Priority}" FontSize="Small" Margin="0" ReturnType="Done" x:Name="TxtPriority" Completed="NextEntry"  ClassId="txtPriority"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

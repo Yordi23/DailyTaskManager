@@ -73,9 +73,25 @@ namespace DailyTaskManager.Views
             TxtPlace.Focus();
         }
 
-        public void NextEntry (object sender, EventArgs e)
+        public void NextEntry (object sender, EventArgs e )
         {
-            TxtDescription.Focus();
+            var entry = (Entry) sender;
+            var classId = entry.ClassId;
+
+            switch (classId)
+            {
+                case "txtNombre":
+                    TxtDescription.Focus();
+                    break;
+                case "txtDescription":
+                    FechaPicker.Focus();
+                    break;
+                case "txtPlace":
+                    TxtPriority.Focus();
+                    break;
+
+            }
+            
         }
         
         
