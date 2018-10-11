@@ -16,7 +16,7 @@
                 <Label Text="del app" Margin="0,-8,0,5" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="14"/>
             </StackLayout>
             <StackLayout BackgroundColor="White">
-                <ListView ItemTapped="ItemTappedHandler" >
+                <ListView ItemTapped="ItemTappedHandler"  SelectionMode="None" >
                     <ListView.ItemsSource >
                         <x:Array Type="{x:Type x:String}" >
                             <x:String>Tiempo</x:String>
