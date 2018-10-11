@@ -36,9 +36,10 @@ namespace DailyTaskManager.Views
                 return;
 
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-
-            // Manually deselect item.
+            ItemsListView.BeginRefresh();
             ItemsListView.SelectedItem = null;
+            ItemsListView.EndRefresh();
+            BindingContext = new ItemsViewModel();
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)

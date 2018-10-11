@@ -14,7 +14,7 @@ namespace DailyTaskManager.Models
         private string _name;
         private string _description;
         private string _place;
-        private DateTime _date;
+        private string _date;
         private List<Rules> _warningRules;
         private Byte _priority;
         public string RowId { get => _rowId; set => _rowId = value; }
@@ -22,12 +22,12 @@ namespace DailyTaskManager.Models
         public string Name { get => _name; set => _name = value; }
         public string Description { get => _description; set => _description = value; }
         public string Place { get => _place; set => _place = value; }
-        public DateTime Date { get => _date; set => _date = value; }
+        public string Date { get => _date; set => _date = value; }
         public List<Rules> WarningRules { get => _warningRules; set => _warningRules = value; }
         public byte Priority { get => _priority; set => _priority = value; }
         public int Id { get => _id; set => _id = value; }
 
-        public Item(string name, string description, string place, DateTime date, byte priority)
+        public Item(string name, string description, string place, string date, byte priority)
         {
             Pendent = true;
             _id = GetID();
@@ -44,7 +44,7 @@ namespace DailyTaskManager.Models
 
         }
 
-        public Item(int id,string rid, bool pendent, string name, string description, string place, DateTime date, List<Rules> warningRules, byte priority)
+        public Item(int id,string rid, bool pendent, string name, string description, string place, string date, List<Rules> warningRules, byte priority)
         {
             _id = id;
             _rowId = rid;

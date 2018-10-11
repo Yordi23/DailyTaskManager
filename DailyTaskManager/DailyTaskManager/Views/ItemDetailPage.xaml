@@ -5,16 +5,16 @@
              Title="{Binding Title}">
     <StackLayout Spacing="20" Padding="15">
         <StackLayout  >
-            <Label Text="Nombre: " FontSize="Medium" />
-            <Label Text="{Binding Item.Name}" FontSize="Small"/>
-            <Label Text="Descripción:" FontSize="Medium" />
-            <Label Text="{Binding Item.Description}" FontSize="Small"/>
-            <Label Text="Fecha:" FontSize="Medium" />
-            <Label Text="{Binding Item.Date}" FontSize="Small"/>
+            <Label Text="Nombre: " FontSize="Medium" TextColor="#3498DB"/>
+            <Label Text="{Binding Item.Name}" FontSize="Small" TextColor="#000000"/>
+            <Label Text="Descripción:" FontSize="Medium" TextColor="#3498DB" />
+            <Label Text="{Binding Item.Description}" FontSize="Small" TextColor="#000000"/>
+            <Label Text="Fecha:" FontSize="Medium" TextColor="#3498DB" />
+            <Label Text="{Binding Item.Date}" FontSize="Small" TextColor="#000000"/>
         </StackLayout>
         <StackLayout>
-            <Button x:Name="CompletedBt" Text="Completada" Clicked="CompleteActivity"/>
-            <Button x:Name="DeleteBt" Text="Eliminar" Clicked="DeleteActivity"/>
+            <Button x:Name="CompletedBt" Text="Completada" Clicked="CompleteActivity" BackgroundColor="#3498DB" TextColor="#FFFFFF"/>
+            <Button x:Name="DeleteBt" Text="Eliminar" Clicked="DeleteActivity" BackgroundColor="#3498DB" TextColor="#FFFFFF"/>
         </StackLayout>
     </StackLayout>
     

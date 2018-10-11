@@ -46,6 +46,7 @@ namespace DailyTaskManager.Views
                     TxtNombre.Focus();
                     return;
                 }
+                
                 using (var data = new DataAccess())
                 {
                     Activities actividad = new Activities
@@ -69,6 +70,12 @@ namespace DailyTaskManager.Views
             }
             await Navigation.PopModalAsync();
 
+        }
+
+        private void FechaPicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            Item.Date = (FechaPicker.Date.Day.ToString() + "/" + FechaPicker.Date.Month.ToString() + "/" +
+                FechaPicker.Date.Year.ToString());
         }
     }
 }

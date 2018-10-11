@@ -17,11 +17,11 @@
     </ContentPage.ToolbarItems>-->
     
     <ContentPage.Content>
-        
+
         <StackLayout Spacing="0">
-            
+
             <StackLayout BackgroundColor="#3498DB">
-                
+
                 <!-- <Image Margin="0,30,0,0" Source="Calendar.png" Aspect="AspectFit"/> -->
                 <Image Source="calendarx.png" WidthRequest="86" HeightRequest="86" Margin="0,30,0,0" Grid.RowSpan="6" Grid.Row="0" Grid.Column="0"/>
                 <Label x:Name="lblDate" Text="Domingo 29, Octubre" Margin="0,0,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF"/>
@@ -60,8 +60,12 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Text="+ Agregar Tarea" Clicked="AddItem_Clicked" TextColor="White" BackgroundColor="#3498DB" BorderRadius="50" Style="padding-bottom: -10%" HeightRequest="35" WidthRequest="60"/>
             </StackLayout>
+            <Grid HeightRequest="40" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,15">
+                <Button Text="+ Agregar Tarea" Clicked="AddItem_Clicked" TextColor="White" BackgroundColor="#3498DB" 
+                        HorizontalOptions="FillAndExpand" BorderRadius="80"/>
+            </Grid>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

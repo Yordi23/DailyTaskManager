@@ -13,7 +13,7 @@
             <Label Text="Description" FontSize="Medium" />
             <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" x:Name="TxtDescription" />
             <Label Text="Fecha" FontSize="Medium" />
-            <DatePicker x:Name="FechaPicker" BindingContext="{Binding Item.Date}" />
+            <DatePicker x:Name="FechaPicker" DateSelected="FechaPicker_DateSelected" BindingContext="{Binding Item.Date}" />
             <Label Text="Lugar" FontSize="Medium" />
             <Editor Text="{Binding Item.Place}" FontSize="Small" Margin="0" x:Name="TxtPlace" />
             <Label Text="Prioridad" FontSize="Medium" />
