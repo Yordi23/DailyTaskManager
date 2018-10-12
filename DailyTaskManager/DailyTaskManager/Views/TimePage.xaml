@@ -8,7 +8,7 @@
         <Label Text="Seleccione sus horas libres:" HorizontalOptions="Center" TextColor="Black"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
             <Button Text="izquierda" Clicked="PreviousDay"/>
-                <Label Text="Lunes" TextColor="Black"/>
+            <Label x:Name="lblDays" Text="Lunes" TextColor="Black"/>
             <Button Text="derecha" Clicked="NextDay"/>
         </StackLayout>
 
@@ -16,7 +16,7 @@
             <TimePicker x:Name="StartTime" Time="0"/>
             <Label Text="Hora de finalización:"/>
             <TimePicker x:Name="EndTime" Time="0"/>
-            <Button Text="Aceptar" Clicked="SaveTime"/>
+            <Button Text="Guardar" Clicked="SaveTime"/>
 
             <!--<Grid>
                 <Grid.RowDefinitions>
