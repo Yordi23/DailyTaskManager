@@ -28,7 +28,7 @@ namespace DailyTaskManager.Services
                 {
                     RulesList = data.GetRules(activity.Id);
                 }
-                Item it = new Item(activity.Id,activity.RowId, (bool)activity.Pendiente,activity.Nombre, activity.Descripcion, activity.Lugar, activity.Fecha, RulesList, (byte)activity.Prioridad);
+                Item it = new Item(activity.Id,activity.RowId, activity.Pendiente,activity.Nombre, activity.Descripcion, activity.Lugar, activity.Fecha, RulesList, activity.Prioridad);
                 items.Add(it);
             }
 

@@ -7,18 +7,11 @@
         <StackLayout BackgroundColor="White">
         <Label Text="Seleccione sus horas libres:" HorizontalOptions="Center" TextColor="Black"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Button Text="izquierda" Clicked="PreviousDay"/>
+            <Button Text="izquierda" />
                 <Label Text="Lunes" TextColor="Black"/>
-            <Button Text="derecha" Clicked="NextDay"/>
+            <Button Text="derecha"/>
         </StackLayout>
-
-            <Label Text="Hora de inicio:"/>
-            <TimePicker x:Name="StartTime" Time="0"/>
-            <Label Text="Hora de finalización:"/>
-            <TimePicker x:Name="EndTime" Time="0"/>
-            <Button Text="Aceptar" Clicked="SaveTime"/>
-
-            <!--<Grid>
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
@@ -84,7 +77,7 @@
                 <controls:CheckBox Grid.Row="10" Grid.Column="2"/>
                 <controls:CheckBox Grid.Row="11" Grid.Column="2"/>
                 <controls:CheckBox Grid.Row="12" Grid.Column="2"/>
-            </Grid>-->
+            </Grid>
             
         </StackLayout>
     </ContentPage.Content>

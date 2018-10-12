@@ -16,24 +16,5 @@ namespace DailyTaskManager.Views
 		{
 			InitializeComponent ();
 		}
-
-        public void SaveTime ()
-        {
-
-
-        }
-
-        public void PreviousDay()
-        {
-
-
-        }
-
-        public void NextDay ()
-        {
-
-        }
-
-    
 	}
 }
