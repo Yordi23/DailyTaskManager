@@ -49,7 +49,7 @@ namespace DailyTaskManager.Views
         {
             await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
         }
-
+        /*
         private void GesturesContentView_GestureRecognized(object sender, GestureResult e)
         {
             switch (e.GestureType)
@@ -68,7 +68,7 @@ namespace DailyTaskManager.Views
                     break;
             }
         }
-
+        */
         protected override void OnAppearing()
         {
             base.OnAppearing();

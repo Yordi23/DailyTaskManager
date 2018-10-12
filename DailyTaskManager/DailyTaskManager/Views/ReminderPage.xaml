@@ -21,31 +21,13 @@
 
             <StackLayout>
                 <StackLayout>
-<<<<<<< HEAD
                     <Label Text="Tiempo libre de hoy:" Margin="7,0,0,0" FontSize="Medium"  TextColor="#3498DB"/>
-                    <ListView SelectionMode="None" IsEnabled="False" x:Name="FreeTimeList">
-
-=======
-                    <Label Text="Tiempo libre de hoy" Margin="7,0,0,0" FontSize="Medium"  TextColor="#3498DB"/>
-                    <ListView SelectionMode="None" IsEnabled="False"> 
-                        <ListView.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>5:00PM-6:00PM</x:String>
-                                <x:String>8:00PM-10:00PM</x:String>
-                            </x:Array>
-                        </ListView.ItemsSource>
->>>>>>> 7c9f62fc0f9b9132863d406163034e54225531dc
+                    <ListView SelectionMode="None" IsEnabled="False" x:Name="FreeTimeList"> 
                     </ListView>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Actividades pendientes" Margin="7,0,0,0" FontSize="Medium"  TextColor="#3498DB"/>
-                    <ListView SelectionMode="None" IsEnabled="False">
-                        <ListView.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Proyecto Final Programacion III</x:String>
-                                <x:String>Examen Final Fisica II</x:String>
-                            </x:Array>
-                        </ListView.ItemsSource>
+                    <Label Text="Actividades pendientes:" Margin="7,0,0,0" FontSize="Medium"  TextColor="#3498DB"/>
+                    <ListView SelectionMode="None" IsEnabled="False" x:Name="ActivitiesList">
                     </ListView>
                 </StackLayout>
             </StackLayout>
