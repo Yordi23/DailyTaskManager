@@ -21,21 +21,23 @@ namespace DailyTaskManager.Views
             lblDate.Text = dia + ", " + DateTime.Now.ToString("MMMM");
         }
 
-        public void ItemTappedHandler (object sender, ItemTappedEventArgs e)
+        public void ItemTappedHandler (object sender, EventArgs e)
         {
-            var item = e.Item;
+            var entry = (ImageCell)sender;
+            var classId = entry.ClassId;
+            
 
-            if (item == null) { return; }
+            if (classId == null) { return; }
 
-            switch (item)
+            switch (classId)
             {
-                case "Tiempo":
+                case "time":
                     Navigation.PushModalAsync(new NavigationPage(new TimePage()));
                     break;
-                case "Estilo":
+                case "style":
                     Navigation.PushModalAsync(new NavigationPage(new StylePage()));
                     break;
-                case "Perfil":
+                case "profile":
                     Navigation.PushModalAsync(new NavigationPage(new ProfilePage()));
                     break;
 

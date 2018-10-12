@@ -33,40 +33,45 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout BackgroundColor="#eee"
+                                <Image Source="brainexlaunch.png" />
+
+                            </ViewCell>
+                            
+
+                            --><!--<StackLayout BackgroundColor="#eee"
                         Orientation="Vertical">
-                                    <StackLayout Orientation="Horizontal">
-                                        <Image Source="brainexlaunch.png" />
-                                        <Label Text="Tiempo"
+                                    <StackLayout Orientation="Horizontal">-->
+                                        <!--<ImageSource="brainexlaunch.png"/>-->
+                                        <!--<Label Text="Tiempo"
                                          TextColor="Black" />
                                     </StackLayout>
-                                </StackLayout>
-                            </ViewCell>
+                                </StackLayout>--><!--
+                            
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>-->
 
 
-                <TableView Intent="Form">
+                <TableView Intent="Form" >
 
-                    <TableRoot>
-                        <TableSection Title="Sports for Fitness">
+                    <TableRoot >
+                        <TableSection Title="Sports for Fitness" >
 
-                            <ImageCell ImageSource="brainexlaunch.png" Text="Tiempo" Detail="It is a Best Part Of Body" Tapped="ItemTappedHandler"></ImageCell>
-                            <ImageCell ImageSource="brainexlaunch.png" Text="Estilo" Detail="It is a Best Part Of Body"></ImageCell>
-                            <ImageCell ImageSource="brainexlaunch.png" Text="Perfil" Detail="It is a Best Part Of Body"></ImageCell>
+                            <ImageCell ImageSource="brainexlaunch.png" Text="Tiempo" Tapped="ItemTappedHandler" ClassId="time"></ImageCell>
+                            <ImageCell ImageSource="brainexlaunch.png" Text="Estilo" Tapped="ItemTappedHandler" ClassId="style"></ImageCell>
+                            <ImageCell ImageSource="brainexlaunch.png" Text="Perfil" Tapped="ItemTappedHandler" ClassId="profile"></ImageCell>
 
                         </TableSection>
                     </TableRoot>
                 </TableView>
 
-                <!--<ListView x:Name="ListViewUser" HeightRequest="400" >
+                <ListView x:Name="ListViewUser" HeightRequest="400" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ImageCell ImageSource="brainexlaunch.png" Text="Test"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                </ListView>-->
+                </ListView>
 
 
 
