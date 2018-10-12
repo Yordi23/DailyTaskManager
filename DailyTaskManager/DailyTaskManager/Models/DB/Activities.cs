@@ -9,7 +9,8 @@ public class Activities
     public string Nombre { get; set; }
     public string Descripcion { get; set; }
     public string Lugar { get; set; } 
-    public string Fecha { get; set; }
+    public int? Hora { get; set; }
+    public string Fecha { get; set; }    
     public Byte? Prioridad { get; set; }
 
     public override string ToString() {

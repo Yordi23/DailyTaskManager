@@ -21,6 +21,8 @@ namespace DailyTaskManager.Services.Sqlite
             connection = DependencyService.Get<IConfig>().Connection;
             connection.CreateTable<Activities>();
             connection.CreateTable<Rules>();
+            connection.CreateTable<FreeTime>();
+            connection.CreateTable<User>();
         }
 
         public void InsertActvity(Activities act)
