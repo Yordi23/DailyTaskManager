@@ -8,7 +8,7 @@
         <Label Text="Seleccione sus horas libres:" HorizontalOptions="Center" TextColor="Black"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
             <Button Text="izquierda" Clicked="PreviousDay"/>
-            <Label x:Name="lblDays" Text="Lunes" TextColor="Black"/>
+            <Label x:Name="lblDays" Text="lunes" TextColor="Black"/>
             <Button Text="derecha" Clicked="NextDay"/>
         </StackLayout>
 

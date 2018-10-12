@@ -23,12 +23,15 @@ namespace DailyTaskManager.Views
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            BindingContext = viewModel = new ItemsViewModel();
+            LoadItem();
             string dia;
             dia = DateTime.Now.ToString("dddd") + " " + DateTime.Today.Day.ToString();
             lblDate.Text = dia + ", " + DateTime.Now.ToString("MMMM");
         }
-
+        public void LoadItem()
+        {
+            BindingContext = viewModel = new ItemsViewModel();
+        }
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var item = args.SelectedItem as Item;
@@ -39,7 +42,7 @@ namespace DailyTaskManager.Views
             ItemsListView.BeginRefresh();
             ItemsListView.SelectedItem = null;
             ItemsListView.EndRefresh();
-            BindingContext = new ItemsViewModel();
+            LoadItem();
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)

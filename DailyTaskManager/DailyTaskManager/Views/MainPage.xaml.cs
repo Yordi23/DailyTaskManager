@@ -19,5 +19,21 @@ namespace DailyTaskManager.Views
              .SetIsSwipePagingEnabled(true);
             CurrentPage = Children[2];
         }
+
+        private void OnCurrentPageChanged(object sender, FocusEventArgs e)
+        {
+            if (CurrentPage == Children[0])
+            {
+                ReminderPage reminder = new ReminderPage();
+                reminder.LoadHour();
+                return;
+            }
+            if(CurrentPage == Children[1])
+            {
+                ItemsPage it = new ItemsPage();
+                it.LoadItem();
+            }
+        }
+
     }
 }

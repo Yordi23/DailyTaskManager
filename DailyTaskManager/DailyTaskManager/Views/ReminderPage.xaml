@@ -22,13 +22,8 @@
             <StackLayout>
                 <StackLayout>
                     <Label Text="Tiempo libre de hoy:" Margin="7,0,0,0" FontSize="Medium"  TextColor="#3498DB"/>
-                    <ListView SelectionMode="None" IsEnabled="False"> 
-                        <ListView.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>5:00PM-6:00PM</x:String>
-                                <x:String>8:00PM-10:00PM</x:String>
-                            </x:Array>
-                        </ListView.ItemsSource>
+                    <ListView SelectionMode="None" IsEnabled="False" x:Name="FreeTimeList">
+
                     </ListView>
                 </StackLayout>
                 <StackLayout>

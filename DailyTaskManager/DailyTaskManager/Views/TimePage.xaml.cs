@@ -16,7 +16,7 @@ namespace DailyTaskManager.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TimePage : ContentPage
 	{
-        string[] arrayDays = new string [] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
+        string[] arrayDays = new string [] { "lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo" };
         byte day = 0;
         public TimePage ()
 		{
@@ -31,7 +31,10 @@ namespace DailyTaskManager.Views
                 freeTime.Day = arrayDays[day];
                 freeTime.StartTime = StartTime.Time.TotalMinutes;
                 freeTime.EndTime = EndTime.Time.TotalMinutes;
-
+                if(freeTime.EndTime <= freeTime.StartTime)
+                {
+                    DisplayAlert("Error", "La fecha de cierre no puede ser menor a la hora de inicio","Acepar");
+                }
                 using (var data = new DataAccess())
                 {
                     List<FreeTime> CurretFreeTime = data.GetFreeTime(freeTime.Day);
