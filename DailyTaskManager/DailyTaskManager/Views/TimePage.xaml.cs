@@ -9,13 +9,14 @@ using Xamarin.Forms.Xaml;
 using DailyTaskManager.Models;
 using DailyTaskManager.Services.Sqlite;
 using System.Security.Cryptography;
+using DailyTaskManager.Models.DB;
 
 namespace DailyTaskManager.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TimePage : ContentPage
 	{
-        string[] daysArray = new string [] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
+        string[] arrayDays = new string [] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
         byte day = 0;
         public TimePage ()
 		{
@@ -24,7 +25,23 @@ namespace DailyTaskManager.Views
 
         public void SaveTime ()
         {
-           FreeTime 
+            try
+            {
+                FreeTime freeTime = new FreeTime();
+                freeTime.Day = arrayDays[day];
+                freeTime.StartTime = StartTime.Time.Minutes;
+                freeTime.EndTime = EndTime.Time.Minutes;
+
+                using (var data = new DataAccess())
+                {
+                    data.Insert(freeTime);
+                }
+            }
+            catch (Exception e)
+            {
+                DisplayAlert("Error", e.Message, "aceptar");
+            }
+
 
         }
 
@@ -39,7 +56,7 @@ namespace DailyTaskManager.Views
             {
                 day = 6;
             }
-            lblDays.Text = daysArray[day];
+            lblDays.Text = arrayDays[day];
             ResetTime();
         }
 
@@ -54,7 +71,7 @@ namespace DailyTaskManager.Views
             {
                 day = 0;
             }
-            lblDays.Text = daysArray[day];
+            lblDays.Text = arrayDays[day];
             ResetTime();
         }
 

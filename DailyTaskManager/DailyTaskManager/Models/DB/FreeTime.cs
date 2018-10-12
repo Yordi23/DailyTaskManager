@@ -6,7 +6,7 @@ namespace DailyTaskManager.Models.DB
     {
         public string Day { get; set; }
         public int StartTime { get; set; }
-        public int EndtTime { get; set; }
+        public int EndTime { get; set; }
 
     }
 }
