@@ -15,8 +15,9 @@ namespace DailyTaskManager.Views
             InitializeComponent();
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
              .SetBarItemColor(Color.FromHex("3498DB"))
-             .SetBarSelectedItemColor(Color.FromHex("3498DB"))
-             .SetIsSwipePagingEnabled(true);
+             .SetBarSelectedItemColor(Color.FromHex("2C3E50"))
+             .SetIsSwipePagingEnabled(true)
+             .SetElevation(0);
             CurrentPage = Children[2];
         }
     }

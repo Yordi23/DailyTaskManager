@@ -61,7 +61,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-            <Grid HeightRequest="40" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,15">
+            <Grid HeightRequest="70" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,15">
                 <Button Text="+ Agregar Tarea" Clicked="AddItem_Clicked" TextColor="White" BackgroundColor="#3498DB" 
                         HorizontalOptions="FillAndExpand" BorderRadius="80"/>
             </Grid>

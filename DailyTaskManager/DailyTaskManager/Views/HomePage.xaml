@@ -4,7 +4,7 @@
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="DailyTaskManager.Views.HomePage"
              BackgroundColor="#FFFFFF"
-             Icon="homex.png" WidthRequest="30" HeightRequest="30"
+             Icon="baseline_home_black_24.png"
              >
 
     <ContentPage.Content>

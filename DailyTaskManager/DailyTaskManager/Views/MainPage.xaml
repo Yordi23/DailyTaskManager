@@ -10,7 +10,7 @@
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="timex.png"/>
-                    <On Platform="Android" Value="timex.png"/>
+                    <On Platform="Android" Value="baseline_access_time_black_24.png"/>
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
@@ -23,7 +23,7 @@
             <NavigationPage.Icon >
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="listx.png"/>
-                    <On Platform="Android" Value="listx.png"/>
+                    <On Platform="Android" Value="baseline_format_list_bulleted_black_24.png"/>
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
@@ -36,7 +36,7 @@
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="homex.png"/>
-                    <On Platform="Android" Value="homex.png"/>
+                    <On Platform="Android" Value="baseline_home_black_24.png"/>
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
@@ -49,7 +49,7 @@
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="settingsx.png"/>
-                    <On Platform="Android" Value="settingsx.png"/>
+                    <On Platform="Android" Value="baseline_settings_black_24.png"/>
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
@@ -62,7 +62,7 @@
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="infox.png"/>
-                    <On Platform="Android" Value="infox.png"/>
+                    <On Platform="Android" Value="baseline_info_black_24.png"/>
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
