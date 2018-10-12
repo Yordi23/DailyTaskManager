@@ -10,30 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace DailyTaskManager.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TimePage : ContentPage
+	public partial class StylePage : ContentPage
 	{
-		public TimePage ()
+		public StylePage ()
 		{
 			InitializeComponent ();
 		}
-
-        public void SaveTime ()
-        {
-
-
-        }
-
-        public void PreviousDay()
-        {
-
-
-        }
-
-        public void NextDay ()
-        {
-
-        }
-
-    
 	}
 }
