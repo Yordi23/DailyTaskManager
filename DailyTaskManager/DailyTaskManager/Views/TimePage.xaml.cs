@@ -29,11 +29,31 @@ namespace DailyTaskManager.Views
             {
                 FreeTime freeTime = new FreeTime();
                 freeTime.Day = arrayDays[day];
-                freeTime.StartTime = StartTime.Time.Minutes;
-                freeTime.EndTime = EndTime.Time.Minutes;
+                freeTime.StartTime = StartTime.Time.TotalMinutes;
+                freeTime.EndTime = EndTime.Time.TotalMinutes;
 
                 using (var data = new DataAccess())
                 {
+                    List<FreeTime> CurretFreeTime = data.GetFreeTime(freeTime.Day);
+                    foreach (FreeTime free in CurretFreeTime)
+                    {
+                        if (freeTime.StartTime>= free.StartTime && freeTime.EndTime <=free.EndTime)
+                        {
+                            return;
+                        }
+                        if(freeTime.StartTime<=free.EndTime && freeTime.EndTime > free.EndTime)
+                        {
+                            free.EndTime = freeTime.EndTime;
+                            data.Update(free);
+                            return;
+                        }
+                        if(freeTime.StartTime<free.StartTime && freeTime.EndTime >= free.StartTime)
+                        {
+                            free.StartTime = freeTime.StartTime;
+                            data.Update(free);
+                            return;
+                        }
+                    }
                     data.Insert(freeTime);
                 }
             }

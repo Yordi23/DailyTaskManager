@@ -16,7 +16,7 @@
             <TimePicker x:Name="StartTime" Time="0"/>
             <Label Text="Hora de finalización:"/>
             <TimePicker x:Name="EndTime" Time="0"/>
-            <Button Text="Aceptar" Clicked="SaveTime"/>
+            <Button Text="Guardar" Clicked="SaveTime"/>
 
             <!--<Grid>
                 <Grid.RowDefinitions>
