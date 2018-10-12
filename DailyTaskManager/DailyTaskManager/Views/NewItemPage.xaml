@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DailyTaskManager.Views.NewItemPage"
-             Title="New Item">
+             Title="Nueva Tarea">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Save" Clicked="Save_Clicked" />
     </ContentPage.ToolbarItems>
@@ -10,7 +10,7 @@
         <StackLayout Spacing="20" Padding="15">
             <Label x:Name="label1" Text="Nombre" FontSize="Medium"/>
             <Entry Text="{Binding Item.Name}" FontSize="Small" x:Name="TxtNombre" ReturnType="Next" Completed="NextEntry" ClassId="txtNombre"/>
-            <Label Text="Description" FontSize="Medium" />
+            <Label Text="Descripción" FontSize="Medium" />
             <Entry  Text="{Binding Item.Description}" FontSize="Small" Margin="0" ReturnType="Next" x:Name="TxtDescription"  Completed="NextEntry" ClassId="txtDescription" />
             <Label Text="Fecha" FontSize="Medium" />
             <DatePicker x:Name="FechaPicker" DateSelected="FechaPicker_DateSelected" BindingContext="{Binding Item.Date}" />

@@ -10,7 +10,6 @@
     <ContentPage.Content>
         <StackLayout Spacing="0">
             <StackLayout BackgroundColor="#3498DB">
-                <!-- <Image Margin="0,30,0,0" Source="Calendar.png" Aspect="AspectFit"/> -->
                 <Image Source="calendarx.png" WidthRequest="86" HeightRequest="86" Margin="0,30,0,0" Grid.RowSpan="6" Grid.Row="0" Grid.Column="0"/>
                 <Label x:Name="lblDate" Margin="0,0,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF"/>
                 <Label Text="Inicio" Margin="0,-8,0,3" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF" FontSize="28"/>
@@ -23,8 +22,8 @@
 
             <StackLayout>
 
-                <Label x:Name="lblUserLastName"  Text="Martínez M" Margin="-15,0,0,-10" TextColor="#2C3E50" FontFamily="Windows Sans Serif" FontSize="16" HorizontalOptions="CenterAndExpand"  />
-                <Label x:Name="lblUserName" Text=" Jeremy A." Margin="10,0,0,23" TextColor="#2980B9" FontFamily="Windows Sans Serif" FontSize="22" HorizontalOptions="CenterAndExpand"  />
+                <Label x:Name="lblUserLastName"  Text="Last Name" Margin="-15,0,0,-10" TextColor="#2C3E50" FontFamily="Windows Sans Serif" FontSize="16" HorizontalOptions="CenterAndExpand"  />
+                <Label x:Name="lblUserName" Text=" Name" Margin="10,0,0,23" TextColor="#2980B9" FontFamily="Windows Sans Serif" FontSize="22" HorizontalOptions="CenterAndExpand"  />
 
                 <Grid>
                     <Grid.RowDefinitions>

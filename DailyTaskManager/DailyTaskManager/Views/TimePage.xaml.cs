@@ -16,7 +16,7 @@ namespace DailyTaskManager.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TimePage : ContentPage
 	{
-        string[] arrayDays = new string [] { "lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo" };
+        string[] arrayDays = new string [] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
         byte day = 0;
         public TimePage ()
 		{

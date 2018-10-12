@@ -5,24 +5,10 @@
              x:Name="BrowseItemsPage"
              BackgroundColor="#FFFFFF"
              >
-            
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="add.png"/>
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>-->
-    
+
     <ContentPage.Content>
-
         <StackLayout Spacing="0">
-
             <StackLayout BackgroundColor="#3498DB">
-
-                <!-- <Image Margin="0,30,0,0" Source="Calendar.png" Aspect="AspectFit"/> -->
                 <Image Source="calendarx.png" WidthRequest="86" HeightRequest="86" Margin="0,30,0,0" Grid.RowSpan="6" Grid.Row="0" Grid.Column="0"/>
                 <Label x:Name="lblDate" Text="Domingo 29, Octubre" Margin="0,0,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF"/>
                 <Label Text="Actividades" Margin="0,-8,0,3" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF" FontSize="28"/>
@@ -30,8 +16,9 @@
 
             <StackLayout BackgroundColor="#ecf0f1" Margin="0,0,0,20">
                 <Label Text="Pronóstico" Margin="0,3,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="18"/>
-                <Label Text="Saturado" Margin="0,-8,0,5" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="14"/>
+                <Label x:Name="lblPronóstico" Text="Saturado" Margin="0,-8,0,5" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="14"/>
             </StackLayout>
+            
             <StackLayout>
                 <ListView x:Name="ItemsListView" 
                     ItemsSource="{Binding Items}"
@@ -61,11 +48,13 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
+
             <Grid HeightRequest="70" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,15">
                 <Button Text="+ Agregar Tarea" Clicked="AddItem_Clicked" TextColor="White" BackgroundColor="#3498DB" 
                         HorizontalOptions="FillAndExpand" BorderRadius="80"/>
             </Grid>
-            
         </StackLayout>
+        
     </ContentPage.Content>
+    
 </ContentPage>

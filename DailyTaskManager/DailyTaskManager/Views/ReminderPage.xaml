@@ -21,12 +21,12 @@
 
             <StackLayout>
                 <StackLayout>
-                    <Label Text="Tiempo libre de hoy:" Margin="7,0,0,0" FontSize="Medium"  TextColor="#3498DB"/>
+                    <Label Text="Tiempo libre de hoy" Margin="7,0,0,0" FontSize="Medium"  TextColor="#3498DB"/>
                     <ListView SelectionMode="None" IsEnabled="False" x:Name="FreeTimeList"> 
                     </ListView>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Actividades pendientes:" Margin="7,0,0,0" FontSize="Medium"  TextColor="#3498DB"/>
+                    <Label Text="Actividades pendientes" Margin="7,0,0,0" FontSize="Medium"  TextColor="#3498DB"/>
                     <ListView SelectionMode="None" IsEnabled="False" x:Name="ActivitiesList">
                     </ListView>
                 </StackLayout>

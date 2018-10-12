@@ -2,90 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DailyTaskManager.Views.TimePage"
-             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             Title="Configuración de Tiempo">
+    
     <ContentPage.Content>
         <StackLayout BackgroundColor="White">
-        <Label Text="Seleccione sus horas libres:" HorizontalOptions="Center" TextColor="Black"/>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Button Text="izquierda" Clicked="PreviousDay"/>
-            <Label x:Name="lblDays" Text="lunes" TextColor="Black"/>
-            <Button Text="derecha" Clicked="NextDay"/>
+            <Label Text="Seleccione sus horas libres por día:" HorizontalOptions="Center" TextColor="#3498DB" FontSize="Medium" Margin="0,15,0,15" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,0,0,10">
+                <Button Text="izquierda" Clicked="PreviousDay" Image="baseline_play_arrow_white_24.png" HeightRequest="36" WidthRequest="36" BorderRadius="2" BorderColor="#3498DB" BackgroundColor="#3498DB" Rotation="180" HorizontalOptions="CenterAndExpand"/>
+            <Label x:Name="lblDays" Text="Lunes" TextColor="Black" FontSize="Medium"/>
+                <Button Text="derecha" Clicked="NextDay" Image="baseline_play_arrow_white_24.png" HeightRequest="36" WidthRequest="36" BorderRadius="2" BorderColor="#3498DB"  BackgroundColor="#3498DB" HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
 
-            <Label Text="Hora de inicio:"/>
-            <TimePicker x:Name="StartTime" Time="0"/>
-            <Label Text="Hora de finalización:"/>
-            <TimePicker x:Name="EndTime" Time="0"/>
-            <Button Text="Guardar" Clicked="SaveTime"/>
+            <Label Text="Hora de inicio:" FontSize="Medium" TextColor="#3498DB" Margin="15,0,0,0"/>
+            <TimePicker x:Name="StartTime" Time="0" Margin="12,0,0,0"/>
+            <Label Text="Hora de finalización:" FontSize="Medium" TextColor="#3498DB" Margin="15,0,0,0"/>
+            <TimePicker x:Name="EndTime" Time="0" Margin="12,0,0,10"/>
+            <Grid HeightRequest="50" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,0">
+                <Button Text="Guardar" Clicked="SaveTime" TextColor="White" BackgroundColor="#3498DB" 
+                        HorizontalOptions="FillAndExpand" BorderRadius="80"/>
+            </Grid>
 
-            <!--<Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-
-
-                <Label Text="1" TextColor="#2C3E50" Grid.Row="1" Grid.Column="0"/>
-                <Label Text="2" TextColor="#2C3E50" Grid.Row="2" Grid.Column="0"/>
-                <Label Text="3" TextColor="#2C3E50" Grid.Row="3" Grid.Column="0"/>
-                <Label Text="4" TextColor="#2C3E50" Grid.Row="4" Grid.Column="0"/>
-                <Label Text="5" TextColor="#2C3E50" Grid.Row="5" Grid.Column="0"/>
-                <Label Text="6" TextColor="#2C3E50" Grid.Row="6" Grid.Column="0"/>
-                <Label Text="7" TextColor="#2C3E50" Grid.Row="7" Grid.Column="0"/>
-                <Label Text="8" TextColor="#2C3E50" Grid.Row="8" Grid.Column="0"/>
-                <Label Text="9" TextColor="#2C3E50" Grid.Row="9" Grid.Column="0"/>
-                <Label Text="10" TextColor="#2C3E50" Grid.Row="10" Grid.Column="0"/>
-                <Label Text="11" TextColor="#2C3E50" Grid.Row="11" Grid.Column="0"/>
-                <Label Text="12" TextColor="#2C3E50" Grid.Row="12" Grid.Column="0"/>
-                
-                
-
-                <Label Text="AM" TextColor="#2C3E50" Grid.Row="0" Grid.Column="1"/>
-                <controls:CheckBox Grid.Row="1" Grid.Column="1"/>
-                <controls:CheckBox Grid.Row="2" Grid.Column="1"/>
-                <controls:CheckBox Grid.Row="3" Grid.Column="1"/>
-                <controls:CheckBox Grid.Row="4" Grid.Column="1"/>
-                <controls:CheckBox Grid.Row="5" Grid.Column="1"/>
-                <controls:CheckBox Grid.Row="6" Grid.Column="1"/>
-                <controls:CheckBox Grid.Row="7" Grid.Column="1"/>
-                <controls:CheckBox Grid.Row="8" Grid.Column="1"/>
-                <controls:CheckBox Grid.Row="9" Grid.Column="1"/>
-                <controls:CheckBox Grid.Row="10" Grid.Column="1"/>
-                <controls:CheckBox Grid.Row="11" Grid.Column="1"/>
-                <controls:CheckBox Grid.Row="12" Grid.Column="1"/>
-
-                <Label Text="PM" TextColor="#2C3E50" Grid.Row="0" Grid.Column="2"/>
-                <controls:CheckBox Grid.Row="1" Grid.Column="2"/>
-                <controls:CheckBox Grid.Row="2" Grid.Column="2"/>
-                <controls:CheckBox Grid.Row="3" Grid.Column="2"/>
-                <controls:CheckBox Grid.Row="4" Grid.Column="2"/>
-                <controls:CheckBox Grid.Row="5" Grid.Column="2"/>
-                <controls:CheckBox Grid.Row="6" Grid.Column="2"/>
-                <controls:CheckBox Grid.Row="7" Grid.Column="2"/>
-                <controls:CheckBox Grid.Row="8" Grid.Column="2"/>
-                <controls:CheckBox Grid.Row="9" Grid.Column="2"/>
-                <controls:CheckBox Grid.Row="10" Grid.Column="2"/>
-                <controls:CheckBox Grid.Row="11" Grid.Column="2"/>
-                <controls:CheckBox Grid.Row="12" Grid.Column="2"/>
-            </Grid>-->
-            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
