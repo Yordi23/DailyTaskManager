@@ -30,6 +30,7 @@ namespace DailyTaskManager.Views
         }
         public void LoadItem()
         {
+            BindingContext = viewModel = null;
             BindingContext = viewModel = new ItemsViewModel();
         }
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)

@@ -25,13 +25,12 @@ namespace DailyTaskManager.Views
             if (CurrentPage == Children[0])
             {
                 ReminderPage reminder = new ReminderPage();
-                reminder.LoadHour();
                 return;
             }
             if(CurrentPage == Children[1])
             {
                 ItemsPage it = new ItemsPage();
-                it.LoadItem();
+                return;
             }
         }
 

@@ -1,7 +1,9 @@
-﻿using DailyTaskManager.Models.DB;
+﻿using DailyTaskManager.Models;
+using DailyTaskManager.Models.DB;
 using DailyTaskManager.Services.Sqlite;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,19 +15,38 @@ namespace DailyTaskManager.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ReminderPage : ContentPage
 	{
-		public ReminderPage ()
+        ObservableCollection<string> activitiesName = new ObservableCollection<string>();
+        ObservableCollection<string> CurrentFreeTimes = new ObservableCollection<string>();
+
+        public ReminderPage ()
 		{
 			InitializeComponent ();
             NavigationPage.SetHasNavigationBar(this, false);
             string dia;
             dia = DateTime.Now.ToString("dddd") + " " + DateTime.Today.Day.ToString();
             lblDate.Text = dia + ", " + DateTime.Now.ToString("MMMM");
+            LoadActivities();
             LoadHour();
+            ActivitiesList.ItemsSource = activitiesName;
+            FreeTimeList.ItemsSource = CurrentFreeTimes;
+        }
+        public void LoadActivities()
+        {
+            activitiesName.Clear();
+            ActivitiesList.ItemsSource = null;
+            using (var data = new DataAccess())
+            {
+                
+                foreach (Activities item in data.GetActivities())
+                {
+                    activitiesName.Add(item.Nombre);
+                }
+            }
+            
         }
         public void LoadHour()
         {
             string todayDay = DateTime.Now.ToString("dddd");
-            List<string> CurrentFreeTimes = new List<string>();
             using (var data = new DataAccess())
             {
                 List<FreeTime> times = data.GetFreeTime(todayDay);
@@ -61,7 +82,7 @@ namespace DailyTaskManager.Views
                     CurrentFreeTimes.Add(time);
                 }
             }
-            FreeTimeList.ItemsSource = CurrentFreeTimes;
+
         }
 	}
 }

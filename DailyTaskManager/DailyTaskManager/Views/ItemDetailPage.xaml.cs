@@ -47,18 +47,33 @@ namespace DailyTaskManager.Views
                     Pendiente = Item.Pendent,
                     Prioridad = Item.Priority,
                     RowId = Item.RowId
-                    
-                };
 
+                };
                 data.Delete(actividad);
-                Navigation.PopAsync();
             }
-            
+            Navigation.PopAsync();
         }
         
         private void CompleteActivity(object sender, EventArgs e)
         {
-            viewModel.Item.Complete();
+            using (var data = new DataAccess())
+            {
+                Item Item = viewModel.Item;
+                Activities actividad = new Activities
+                {
+                    Nombre = Item.Name,
+                    Id = Item.Id,
+                    Descripcion = Item.Description,
+                    Fecha = Item.Date,
+                    Lugar = Item.Place,
+                    Hora = Item.Time,
+                    Pendiente = true,
+                    Prioridad = Item.Priority,
+                    RowId = Item.RowId
+                };
+                data.Update(actividad);
+            }
+            Navigation.PopAsync();
         }
     }
 }

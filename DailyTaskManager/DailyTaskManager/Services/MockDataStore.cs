@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using DailyTaskManager.Models;
@@ -10,11 +11,11 @@ namespace DailyTaskManager.Services
 {
     public class MockDataStore : IDataStore<Item>
     {
-        List<Item> items;
+        ObservableCollection<Item> items;
 
         public MockDataStore()
         {
-            items = new List<Item>();
+            items = new ObservableCollection<Item>();
             //SqliteService sqlite = new SqliteService();
             List<Activities> mockItems = new List<Activities>();
             List<Rules> RulesList = new List<Rules>();
