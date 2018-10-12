@@ -50,7 +50,7 @@ namespace DailyTaskManager.Views
                     
                 };
 
-                data.DeleteActivity(actividad);
+                data.Delete(actividad);
                 Navigation.PopAsync();
             }
             
