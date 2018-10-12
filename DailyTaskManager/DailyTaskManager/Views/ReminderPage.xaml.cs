@@ -58,25 +58,57 @@ namespace DailyTaskManager.Views
                     int initialM, endM;
                     initialH = Math.Truncate(double.Parse((item.StartTime / 60).ToString()));
                     initialM = int.Parse((item.StartTime % 60).ToString());
+                    
                     endH = Math.Truncate(double.Parse((item.EndTime / 60).ToString()));
                     endM = int.Parse((item.EndTime % 60).ToString());
                     if (initialH >= 12)
                     {
                         initialH -= 12;
-                        initialTime = initialH + ":" + initialM+" PM";
+                        if (initialM < 10)
+                        {
+                            initialTime = initialH + ":" + "0" + initialM + " PM";
+                        }
+                        else
+                        {
+                            initialTime = initialH + ":" + initialM + " PM";
+                        }
                     }
                     else
                     {
-                        initialTime = initialH + ":" + initialM+"AM";
+                        if (initialM < 10)
+                        {
+                            initialTime = initialH + ":" + "0" + initialM + " AM";
+                        }
+                        else
+                        {
+                            initialTime = initialH + ":" + initialM + " AM";
+                        }
+                       
                     }
                     if (endH >= 12)
                     {
                         endH -= 12;
-                        endtime = endH + ":" + endM + " PM";
+
+                        if (endM < 10)
+                        {
+                            endtime = endH + ":" + "0" + endM + " PM";
+                        }
+                        else
+                        {
+                            endtime = endH + ":" + endM + " PM";
+                        }
+                        
                     }
                     else
                     {
-                        endtime = endH + ":" + endM + "AM";
+                        if (endM < 10)
+                        {
+                            endtime = endH + ":" + "0" + endM + " AM";
+                        }
+                        else
+                        {
+                            endtime = endH + ":" + endM + " AM";
+                        }
                     }                 
                     time = initialTime + "-" + endtime;
                     CurrentFreeTimes.Add(time);
