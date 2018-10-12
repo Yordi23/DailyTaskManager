@@ -3936,26 +3936,26 @@ namespace DailyTaskManager.Droid
 			// aapt resource value: 0x7f020054
 			public const int avd_hide_password = 2130837588;
 			
-			// aapt resource value: 0x7f020128
-			public const int avd_hide_password_1 = 2130837800;
-			
 			// aapt resource value: 0x7f020129
-			public const int avd_hide_password_2 = 2130837801;
+			public const int avd_hide_password_1 = 2130837801;
 			
 			// aapt resource value: 0x7f02012a
-			public const int avd_hide_password_3 = 2130837802;
+			public const int avd_hide_password_2 = 2130837802;
+			
+			// aapt resource value: 0x7f02012b
+			public const int avd_hide_password_3 = 2130837803;
 			
 			// aapt resource value: 0x7f020055
 			public const int avd_show_password = 2130837589;
 			
-			// aapt resource value: 0x7f02012b
-			public const int avd_show_password_1 = 2130837803;
-			
 			// aapt resource value: 0x7f02012c
-			public const int avd_show_password_2 = 2130837804;
+			public const int avd_show_password_1 = 2130837804;
 			
 			// aapt resource value: 0x7f02012d
-			public const int avd_show_password_3 = 2130837805;
+			public const int avd_show_password_2 = 2130837805;
+			
+			// aapt resource value: 0x7f02012e
+			public const int avd_show_password_3 = 2130837806;
 			
 			// aapt resource value: 0x7f020056
 			public const int baseline_access_time_24 = 2130837590;
@@ -4563,11 +4563,11 @@ namespace DailyTaskManager.Droid
 			// aapt resource value: 0x7f02011f
 			public const int notification_icon_background = 2130837791;
 			
-			// aapt resource value: 0x7f020126
-			public const int notification_template_icon_bg = 2130837798;
-			
 			// aapt resource value: 0x7f020127
-			public const int notification_template_icon_low_bg = 2130837799;
+			public const int notification_template_icon_bg = 2130837799;
+			
+			// aapt resource value: 0x7f020128
+			public const int notification_template_icon_low_bg = 2130837800;
 			
 			// aapt resource value: 0x7f020120
 			public const int notification_tile_bg = 2130837792;
@@ -4579,13 +4579,16 @@ namespace DailyTaskManager.Droid
 			public const int settingsx = 2130837794;
 			
 			// aapt resource value: 0x7f020123
-			public const int timex = 2130837795;
+			public const int Splash = 2130837795;
 			
 			// aapt resource value: 0x7f020124
-			public const int UserBig = 2130837796;
+			public const int timex = 2130837796;
 			
 			// aapt resource value: 0x7f020125
-			public const int xamarin_logo = 2130837797;
+			public const int UserBig = 2130837797;
+			
+			// aapt resource value: 0x7f020126
+			public const int xamarin_logo = 2130837798;
 			
 			static Drawable()
 			{
@@ -5734,8 +5737,8 @@ namespace DailyTaskManager.Droid
 			// aapt resource value: 0x7f0b0174
 			public const int Animation_Design_BottomSheetDialog = 2131427700;
 			
-			// aapt resource value: 0x7f0b018f
-			public const int AppCompatDialogStyle = 2131427727;
+			// aapt resource value: 0x7f0b0190
+			public const int AppCompatDialogStyle = 2131427728;
 			
 			// aapt resource value: 0x7f0b00b6
 			public const int Base_AlertDialog_AppCompat = 2131427510;
@@ -6223,11 +6226,11 @@ namespace DailyTaskManager.Droid
 			// aapt resource value: 0x7f0b0012
 			public const int CardView_Light = 2131427346;
 			
-			// aapt resource value: 0x7f0b018d
-			public const int MainTheme = 2131427725;
-			
 			// aapt resource value: 0x7f0b018e
-			public const int MainTheme_Base = 2131427726;
+			public const int MainTheme = 2131427726;
+			
+			// aapt resource value: 0x7f0b018f
+			public const int MainTheme_Base = 2131427727;
 			
 			// aapt resource value: 0x7f0b0031
 			public const int Platform_AppCompat = 2131427377;
@@ -6630,6 +6633,9 @@ namespace DailyTaskManager.Droid
 			
 			// aapt resource value: 0x7f0b000a
 			public const int Theme_MediaRouter_LightControlPanel = 2131427338;
+			
+			// aapt resource value: 0x7f0b018d
+			public const int Theme_Splash = 2131427725;
 			
 			// aapt resource value: 0x7f0b0123
 			public const int ThemeOverlay_AppCompat = 2131427619;
