@@ -10,7 +10,7 @@
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="timex.png"/>
-                    <On Platform="Android" Value="baseline_access_time_black_24.png"/>
+                    <On Platform="Android" Value="baseline_timelapse_black_24"/>
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
