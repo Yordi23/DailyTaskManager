@@ -43,12 +43,14 @@ namespace DailyTaskManager.Views
                     Descripcion = Item.Description,
                     Fecha = Item.Date,
                     Lugar = Item.Place,
+                    Hora = Item.Time,
                     Pendiente = Item.Pendent,
                     Prioridad = Item.Priority,
                     RowId = Item.RowId
+                    
                 };
 
-                data.DeleteActivity(actividad);
+                data.Delete(actividad);
                 Navigation.PopAsync();
             }
             

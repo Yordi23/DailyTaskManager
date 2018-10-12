@@ -21,22 +21,25 @@ namespace DailyTaskManager.Services.Sqlite
             connection = DependencyService.Get<IConfig>().Connection;
             connection.CreateTable<Activities>();
             connection.CreateTable<Rules>();
+            connection.CreateTable<FreeTime>();
+            connection.CreateTable<User>();
         }
 
-        public void InsertActvity(Activities act)
+        public void Insert(Object act)
         {
             connection.Insert(act);
         }
 
-        public void UpdateActivity(Activities act)
+        public void Update(Object act)
         {
             connection.Update(act);
         }
 
-        public void DeleteActivity(Activities act)
+        public void Delete(Object act)
         {
             connection.Delete(act);
         }
+        //Activity
 
         public Activities GetActivity(int idActv)
         {
@@ -47,21 +50,7 @@ namespace DailyTaskManager.Services.Sqlite
         {
             return connection.Table<Activities>().OrderBy(c => c.Fecha).ToList();
         }
-
-        public void InsertRule(Rules rul)
-        {
-            connection.Insert(rul);
-        }
-
-        public void UpdateRule(Rules act)
-        {
-            connection.Update(act);
-        }
-
-        public void DeleteRule(Rules act)
-        {
-            connection.Delete(act);
-        }
+        //Rule
 
         public Rules GetRule(int idActv,int idRule)
         {
@@ -71,6 +60,26 @@ namespace DailyTaskManager.Services.Sqlite
         public List<Rules> GetRules(int idActv)
         {
             return connection.Table<Rules>().Where(a => a.BindId == idActv).ToList();
+        }
+        
+        //Time
+
+        public List<FreeTime> GetFreeTime(string day)
+        {
+            return connection.Table<FreeTime>().Where(a => a.Day == day).ToList();
+        }
+
+        public List<FreeTime> GetFreeTime()
+        {
+            return connection.Table<FreeTime>().OrderBy(c => c.Day).ToList();
+        }
+
+        //User
+
+
+        public List<User> GetUser()
+        {
+            return connection.Table<User>().ToList();
         }
 
         public void Dispose()

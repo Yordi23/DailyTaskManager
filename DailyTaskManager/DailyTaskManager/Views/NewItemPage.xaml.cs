@@ -40,7 +40,8 @@ namespace DailyTaskManager.Views
             try
             {
                 MessagingCenter.Send(this, "AddItem", Item);
-                
+                Item.Date = (FechaPicker.Date.Day.ToString() + "/" + FechaPicker.Date.Month.ToString() + "/" +
+                FechaPicker.Date.Year.ToString());
                 using (var data = new DataAccess())
                 {
                     Activities actividad = new Activities
@@ -49,12 +50,13 @@ namespace DailyTaskManager.Views
                         Descripcion = Item.Description,
                         Fecha = Item.Date,
                         Lugar = Item.Place,
+                        Hora = Item.Time,
                         Pendiente = Item.Pendent,
                         Prioridad = Item.Priority,
                         RowId = CreateRowID()
                     };
 
-                    data.InsertActvity(actividad);
+                    data.Insert(actividad);
                 }
                 
             }
