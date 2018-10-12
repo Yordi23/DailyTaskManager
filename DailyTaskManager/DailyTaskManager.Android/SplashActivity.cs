@@ -15,6 +15,7 @@ namespace DailyTaskManager.Droid
     [Activity(Theme = "@style/Theme.Splash",
        MainLauncher = true,
        NoHistory = true,
+       Label = "Brainex",
        Icon = "@drawable/brainexlaunch")]
 
     public class SplashActivity : Activity
