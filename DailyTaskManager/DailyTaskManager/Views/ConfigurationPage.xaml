@@ -15,19 +15,50 @@
                 <Label Text="Ajustes" Margin="0,3,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="18"/>
                 <Label Text="del app" Margin="0,-8,0,5" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="14"/>
             </StackLayout>
+            
             <StackLayout BackgroundColor="White">
-                <ListView ItemTapped="ItemTappedHandler"  SelectionMode="None" >
+                <!--<ListView ItemTapped="ItemTappedHandler"  SelectionMode="None" >
                     <ListView.ItemsSource >
+ 
                         <x:Array Type="{x:Type x:String}" >
                             <x:String>Tiempo</x:String>
                             <x:String>Estilo</x:String>
                             <x:String>Perfil</x:String>
-                           
+                     
                         </x:Array>
                     </ListView.ItemsSource>
-                </ListView>
-            </StackLayout>
+                </ListView>-->
 
+                <!--<ListView x:Name="Menuconfig" ItemTapped="ItemTappedHandler" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout BackgroundColor="#eee"
+                        Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="brainexlaunch.png" />
+                                        <Label Text="Tiempo"
+                                         TextColor="Black" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>-->
+
+
+                <ListView x:Name="ListViewUser" HeightRequest="400" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell ImageSource="brainexlaunch.png" Text="Test"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+
+
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
