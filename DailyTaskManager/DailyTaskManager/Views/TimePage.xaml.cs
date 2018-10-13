@@ -17,11 +17,13 @@ namespace DailyTaskManager.Views
 	public partial class TimePage : ContentPage
 	{
         string[] arrayDays = new string [] { "lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo" };
+        string[] arrayDays2 = new string[] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
         byte day = 0;
         public TimePage ()
 		{
 			InitializeComponent ();
-		}
+            
+        }
 
         public void SaveTime ()
         {
@@ -79,7 +81,7 @@ namespace DailyTaskManager.Views
             {
                 day = 6;
             }
-            lblDays.Text = arrayDays[day];
+            lblDays.Text = arrayDays2[day];
             ResetTime();
         }
 
@@ -94,7 +96,7 @@ namespace DailyTaskManager.Views
             {
                 day = 0;
             }
-            lblDays.Text = arrayDays[day];
+            lblDays.Text = arrayDays2[day];
             ResetTime();
         }
 

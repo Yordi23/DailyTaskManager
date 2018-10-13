@@ -12,12 +12,20 @@ namespace DailyTaskManager.Views
     {
         public MainPage()
         {
+            
             InitializeComponent();
+            if (App.FirstExecution)
+            {
+                Navigation.PushModalAsync(new TimePage());
+                App.FirstExecution = false;
+            }
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
              .SetBarItemColor(Color.FromHex("3498DB"))
              .SetBarSelectedItemColor(Color.FromHex("2C3E50"))
              .SetIsSwipePagingEnabled(true);
             CurrentPage = Children[2];
+            
+            
         }
 
         private void OnCurrentPageChanged(object sender, FocusEventArgs e)
