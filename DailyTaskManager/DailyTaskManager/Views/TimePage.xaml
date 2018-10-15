@@ -18,10 +18,12 @@
             <TimePicker x:Name="StartTime" Time="0" Margin="12,0,0,0"/>
             <Label Text="Hora de finalización:" FontSize="Medium" TextColor="#3498DB" Margin="15,0,0,0"/>
             <TimePicker x:Name="EndTime" Time="0" Margin="12,0,0,10"/>
-            <Grid HeightRequest="50" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,0">
+            <StackLayout Orientation="Horizontal" HeightRequest="50" WidthRequest="150" Margin="0,0,0,0" >
                 <Button Text="Guardar" Clicked="SaveTime" TextColor="White" BackgroundColor="#3498DB" 
                         HorizontalOptions="FillAndExpand" BorderRadius="80"/>
-            </Grid>
+                <Button Text="Finalizar" Clicked="Done" TextColor="White" BackgroundColor="#3498DB" 
+                        HorizontalOptions="FillAndExpand" BorderRadius="80"/>
+            </StackLayout>
 
         </StackLayout>
     </ContentPage.Content>

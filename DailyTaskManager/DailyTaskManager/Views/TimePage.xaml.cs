@@ -106,6 +106,9 @@ namespace DailyTaskManager.Views
             EndTime.Time = new TimeSpan(0);
         }
 
-    
+        public void Done()
+        {
+            Navigation.PopModalAsync();
+        }
 	}
 }

@@ -17,6 +17,7 @@ namespace DailyTaskManager.Views
             if (App.FirstExecution)
             {
                 Navigation.PushModalAsync(new TimePage());
+                Navigation.PushModalAsync(new ProfilePage());
                 App.FirstExecution = false;
             }
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)

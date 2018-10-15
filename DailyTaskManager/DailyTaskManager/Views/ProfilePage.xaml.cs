@@ -16,5 +16,11 @@ namespace DailyTaskManager.Views
 		{
 			InitializeComponent ();
 		}
+
+        public void Save ()
+        {
+            Navigation.PopModalAsync();
+
+        }
 	}
 }
