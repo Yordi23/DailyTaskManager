@@ -19,6 +19,7 @@ namespace DailyTaskManager.Views
     {
         ItemsViewModel viewModel;
 
+
         public ItemsPage()
         {
             InitializeComponent();
@@ -27,11 +28,13 @@ namespace DailyTaskManager.Views
             string dia;
             dia = DateTime.Now.ToString("dddd") + " " + DateTime.Today.Day.ToString();
             lblDate.Text = dia + ", " + DateTime.Now.ToString("MMMM");
+            RefreshPronóstico();
         }
         public void LoadItem()
         {
             BindingContext = viewModel = null;
             BindingContext = viewModel = new ItemsViewModel();
+            RefreshPronóstico();
         }
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
@@ -44,11 +47,13 @@ namespace DailyTaskManager.Views
             ItemsListView.SelectedItem = null;
             ItemsListView.EndRefresh();
             LoadItem();
+            RefreshPronóstico();
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+            RefreshPronóstico();
         }
         /*
         private void GesturesContentView_GestureRecognized(object sender, GestureResult e)
@@ -76,6 +81,26 @@ namespace DailyTaskManager.Views
 
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
+            RefreshPronóstico();
+        }
+
+        public void RefreshPronóstico()
+        {
+            ReminderPage reminder = new ReminderPage();
+            int itemCount = reminder.itemCount;
+            if (itemCount <= 10)
+            {
+                lblPronóstico.Text = "Ligero";
+            }
+            else if ((itemCount > 10) && (itemCount < 15))
+            {
+                lblPronóstico.Text = "Ocupado";
+            }
+            else
+            {
+                lblPronóstico.Text = "Saturado";
+            }
+
         }
     }
 }

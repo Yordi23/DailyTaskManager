@@ -12,11 +12,13 @@ using Xamarin.Forms.Xaml;
 
 namespace DailyTaskManager.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ReminderPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ReminderPage : ContentPage
+    {
+
         ObservableCollection<string> activitiesName = new ObservableCollection<string>();
         ObservableCollection<string> CurrentFreeTimes = new ObservableCollection<string>();
+        public int itemCount = 0;
 
         public ReminderPage ()
 		{
@@ -40,7 +42,9 @@ namespace DailyTaskManager.Views
                 foreach (Activities item in data.GetActivities())
                 {
                     activitiesName.Add(item.Nombre);
+                    
                 }
+                itemCount = activitiesName.Count;
             }
             
         }

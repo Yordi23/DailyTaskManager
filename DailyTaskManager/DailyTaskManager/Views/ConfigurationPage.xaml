@@ -55,7 +55,7 @@
                 <TableView Intent="Form" >
 
                     <TableRoot >
-                        <TableSection Title="Sports for Fitness" >
+                        <TableSection >
 
                             <ImageCell ImageSource="brainexlaunch.png" Text="Tiempo" Tapped="ItemTappedHandler" ClassId="time"></ImageCell>
                             <ImageCell ImageSource="brainexlaunch.png" Text="Estilo" Tapped="ItemTappedHandler" ClassId="style"></ImageCell>
@@ -65,13 +65,13 @@
                     </TableRoot>
                 </TableView>
 
-                <ListView x:Name="ListViewUser" HeightRequest="400" >
+                <!--<ListView x:Name="ListViewUser" HeightRequest="400" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ImageCell ImageSource="brainexlaunch.png" Text="Test"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                </ListView>
+                </ListView>-->
 
 
 
