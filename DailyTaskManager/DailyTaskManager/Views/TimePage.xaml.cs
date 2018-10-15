@@ -29,6 +29,7 @@ namespace DailyTaskManager.Views
         {
             try
             {
+                 
                 FreeTime freeTime = new FreeTime();
                 freeTime.Day = arrayDays[day];
                 freeTime.StartTime = StartTime.Time.TotalMinutes;
@@ -59,6 +60,8 @@ namespace DailyTaskManager.Views
                             return;
                         }
                     }
+                    Label lblMensaje = new Label();
+                    lblMensaje.IsVisible = true;
                     data.Insert(freeTime);
                 }
             }

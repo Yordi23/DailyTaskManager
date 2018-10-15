@@ -57,9 +57,10 @@
                     <TableRoot >
                         <TableSection >
 
-                            <ImageCell ImageSource="brainexlaunch.png" Text="Tiempo" Tapped="ItemTappedHandler" ClassId="time"></ImageCell>
-                            <ImageCell ImageSource="brainexlaunch.png" Text="Estilo" Tapped="ItemTappedHandler" ClassId="style"></ImageCell>
-                            <ImageCell ImageSource="brainexlaunch.png" Text="Perfil" Tapped="ItemTappedHandler" ClassId="profile"></ImageCell>
+                            <ImageCell ImageSource="timec.png" Text="Tiempo" Tapped="ItemTappedHandler" ClassId="time" Detail="Editar espacios de tiempo libre." DetailColor="#000000"/>
+                            <ImageCell ImageSource="userc.png" Text="Perfil" Tapped="ItemTappedHandler" ClassId="profile" Detail="Ajustes de presentación, imagen de perfil." DetailColor="#000000"/>
+                            <ImageCell ImageSource="paintbrushc.png" Text="Estilo" Tapped="ItemTappedHandler" ClassId="style" Detail="Cambios de apariencia." DetailColor="#000000"/> 
+
 
                         </TableSection>
                     </TableRoot>

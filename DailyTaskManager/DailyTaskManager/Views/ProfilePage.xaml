@@ -6,12 +6,14 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Nombre:" FontSize="Medium" Margin="17,10,0,0" TextColor="#3498DB"/>
+            <Label Text="Nombre" FontSize="Medium" Margin="17,10,0,0" TextColor="#3498DB"/>
             <Entry Text="{Binding Item.Name}" FontSize="Small" x:Name="TxtNombreUsuario"/>
-            <Label Text="Apellido:" FontSize="Medium" Margin="17,0,0,0" TextColor="#3498DB" />
+            <Label Text="Apellido" FontSize="Medium" Margin="17,0,0,0" TextColor="#3498DB" />
             <Entry Text="{Binding Item.Name}" FontSize="Small" x:Name="TxtApellidoUsuario"/>
-            <Label Text="Cambiar Foto de Perfil:" FontSize="Medium" Margin="17,0,0,10" TextColor="#3498DB" />
-            <Label Text="NA DE ETO TA PROGRAMAO" FontSize="Medium" Margin="17,0,0,10" TextColor="#000000" />
+            <Label Text="Foto de Perfil" FontSize="Medium" Margin="17,0,0,10" TextColor="#3498DB" />
+            <Grid HeightRequest="50" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,0">
+                <Button Text="Editar" TextColor="White" BackgroundColor="#3498DB" BorderRadius="80"/>
+            </Grid>
             <Grid HeightRequest="50" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,0">
                 <Button Text="Guardar" TextColor="White" BackgroundColor="#3498DB" Clicked="Save"
                         HorizontalOptions="FillAndExpand" BorderRadius="80"/>
