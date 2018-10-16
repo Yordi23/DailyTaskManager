@@ -19,10 +19,42 @@ namespace DailyTaskManager.Services.Sqlite
             var config = DependencyService.Get<IConfig>();
             //SQLiteConnectionString cString = new SQLiteConnectionString(,storeDateTimeAsTicks:true);
             connection = DependencyService.Get<IConfig>().Connection;
-            connection.CreateTable<Activities>();
-            connection.CreateTable<Rules>();
-            connection.CreateTable<FreeTime>();
-            connection.CreateTable<User>();
+            try
+            {
+                connection.CreateTable<User>();
+            }
+            catch
+            {
+
+            }
+            try
+            {
+                connection.CreateTable<FreeTime>();
+            }
+            catch
+            {
+
+            }
+            try
+            {
+                connection.CreateTable<Rules>();
+            }
+            catch
+            {
+
+            }
+            try
+            {
+                connection.CreateTable<Activities>();
+            }
+            catch
+            {
+
+            }
+            
+            
+            
+            
         }
 
         public void Insert(Object act)
@@ -50,6 +82,11 @@ namespace DailyTaskManager.Services.Sqlite
         {
             return connection.Table<Activities>().OrderBy(c => c.Fecha).ToList();
         }
+        public List<Activities> GetActivities(bool pendent)
+        {
+            return connection.Table<Activities>().Where(a => a.Pendiente != pendent).ToList();
+        }
+
         //Rule
 
         public Rules GetRule(int idActv,int idRule)
@@ -75,11 +112,14 @@ namespace DailyTaskManager.Services.Sqlite
         }
 
         //User
-        public List<User> GetUser()
+        public List<User> GetUsers()
         {
             return connection.Table<User>().ToList();
         }
-
+        public User GetUser()
+        {
+            return connection.Table<User>().FirstOrDefault();
+        }
         public void Dispose()
         {
             connection.Close();

@@ -8,7 +8,7 @@ namespace DailyTaskManager.Models.DB
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }
-        public bool LastName { get; set; }
+        public string LastName { get; set; }
         public byte[] Image { get; set; }
     }
 }

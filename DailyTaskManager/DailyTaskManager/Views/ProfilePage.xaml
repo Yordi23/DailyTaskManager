@@ -1,16 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="DailyTaskManager.Views.ProfilePage"
              Title="Configuración de Perfil"
              >
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Nombre" FontSize="Medium" Margin="17,10,0,0" TextColor="#3498DB"/>
-            <Entry Text="{Binding Item.Name}" FontSize="Small" x:Name="TxtNombreUsuario"/>
+            <Entry FontSize="Small" x:Name="TxtNombreUsuario"/>
             <Label Text="Apellido" FontSize="Medium" Margin="17,0,0,0" TextColor="#3498DB" />
-            <Entry Text="{Binding Item.Name}" FontSize="Small" x:Name="TxtApellidoUsuario"/>
+            <Entry FontSize="Small" x:Name="TxtApellidoUsuario"/>
             <Label Text="Foto de Perfil" FontSize="Medium" Margin="17,0,0,10" TextColor="#3498DB" />
+            <Grid HeightRequest="50" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,0">
+                <Button Text="Examinar" TextColor="White" BackgroundColor="#3498DB" Clicked="BuscarImagen"
+                        HorizontalOptions="FillAndExpand" BorderRadius="80"/>
+            </Grid>
+            <controls:CircleImage Source="UserBig.png" Aspect="AspectFit" x:Name="ImageBox" WidthRequest="80" HeightRequest="80" BorderColor="#2C3E50" BorderThickness="2" Margin="22,0,0,60" Grid.RowSpan="6" Grid.Column="0" Grid.Row="0"/>
+            
             <Grid HeightRequest="50" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,0">
                 <Button Text="Editar" TextColor="White" BackgroundColor="#3498DB" BorderRadius="80"/>
             </Grid>

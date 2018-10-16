@@ -25,17 +25,24 @@ namespace DailyTaskManager.Views
              .SetBarSelectedItemColor(Color.FromHex("2C3E50"))
              .SetIsSwipePagingEnabled(true);
             CurrentPage = Children[2];
-            
-            
         }
 
         private void OnCurrentPageChanged(object sender, FocusEventArgs e)
-        {   
+        {
+
             if (CurrentPage == Children[0])
             {
                 ReminderPage.LoadActivities();
                 ReminderPage.LoadHour();
+                return;
             }
+            
+            if(CurrentPage == Children[2])
+            {
+                MessagingCenter.Send(this, "UpdateHome");
+                return;
+            }
+
         }
 
     }

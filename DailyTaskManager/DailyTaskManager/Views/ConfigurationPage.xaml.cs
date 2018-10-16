@@ -41,7 +41,6 @@ namespace DailyTaskManager.Views
                     Navigation.PushModalAsync(new NavigationPage(new ProfilePage()));
                     break;
 
-
             }
         }
     }

@@ -145,6 +145,9 @@
     <PackageReference Include="UXDivers.GorillaPlayer.SDK">
       <Version>1.2.2</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>4.0.1.5</Version>
+    </PackageReference>
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
       <Version>3.0.0.6-beta</Version>
     </PackageReference>
