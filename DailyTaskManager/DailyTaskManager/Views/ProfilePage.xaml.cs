@@ -16,48 +16,48 @@ namespace DailyTaskManager.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ProfilePage : ContentPage
 	{
-        byte[] ImageArray;
+        public static byte[] ImageArray;
 		public ProfilePage ()
 		{
 			InitializeComponent ();
             LoadUserProfile();
 		}
 
-        public void Save ()
+        public void Save()
         {
-            Navigation.PopModalAsync();
-            using(var data = new DataAccess())
+            User us = new User
             {
-                User us = new User
-                {
-                    Name = TxtNombreUsuario.Text,
-                    LastName = TxtApellidoUsuario.Text,
-                    Image = ImageArray
-                };
+                Name = TxtNombreUsuario.Text,
+                LastName = TxtApellidoUsuario.Text,
+                Image = ImageArray
+            };
+            using (var data = new DataAccess())
+            { 
                 List<User> UserL = data.GetUsers();
                 if(UserL.Count > 1)
                 {
                     foreach (var item in UserL)
                     {
                         data.Delete(item);
-                    }
-                    
+                    }           
                 }
                 else if (UserL.Count == 1)
                 {
-                    us = new User
-                    {
-                        Name = TxtNombreUsuario.Text,
-                        LastName = TxtApellidoUsuario.Text,
-                        Image = ImageArray
-                    };
-                    data.Update(us);
-                    return;
+                    User Nus = data.GetUser();
+                    Nus.Name = us.Name;
+                    Nus.LastName = us.LastName;
+                    Nus.Image = us.Image;
+                    data.Update(Nus);
+                    
+
+                }else if(UserL.Count == 0)
+                {
+                    data.Insert(us);
                 }
-                data.Insert(us);
                 data.Dispose();
             }
-            DisplayAlert("Aviso", "Algunos cambios no serán establecidos hasta que reinicies la aplicación", "aceptar");
+            //DisplayAlert("Aviso", "Algunos cambios no serán establecidos hasta que reinicies la aplicación", "aceptar");
+            Navigation.PopModalAsync();
         }
 
         public void LoadUserProfile()
@@ -77,8 +77,7 @@ namespace DailyTaskManager.Views
             {
 
             }
-            
-            
+             
         }
 
         private async void BuscarImagen(object sender, EventArgs e)

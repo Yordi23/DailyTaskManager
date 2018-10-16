@@ -17,10 +17,7 @@
                         HorizontalOptions="FillAndExpand" BorderRadius="80"/>
             </Grid>
             <controls:CircleImage Source="UserBig.png" Aspect="AspectFit" x:Name="ImageBox" WidthRequest="80" HeightRequest="80" BorderColor="#2C3E50" BorderThickness="2" Margin="22,0,0,60" Grid.RowSpan="6" Grid.Column="0" Grid.Row="0"/>
-            
-            <Grid HeightRequest="50" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,0">
-                <Button Text="Editar" TextColor="White" BackgroundColor="#3498DB" BorderRadius="80"/>
-            </Grid>
+
             <Grid HeightRequest="50" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,0">
                 <Button Text="Guardar" TextColor="White" BackgroundColor="#3498DB" Clicked="Save"
                         HorizontalOptions="FillAndExpand" BorderRadius="80"/>
