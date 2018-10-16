@@ -30,16 +30,11 @@ namespace DailyTaskManager.Views
         }
 
         private void OnCurrentPageChanged(object sender, FocusEventArgs e)
-        {
+        {   
             if (CurrentPage == Children[0])
             {
-                ReminderPage reminder = new ReminderPage();
-                return;
-            }
-            if(CurrentPage == Children[1])
-            {
-                ItemsPage it = new ItemsPage();
-                return;
+                ReminderPage.LoadActivities();
+                ReminderPage.LoadHour();
             }
         }
 

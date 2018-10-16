@@ -25,18 +25,25 @@ namespace DailyTaskManager.Views
             
         }
 
-        public void SaveTime ()
+        public async Task SaveTime ()
         {
             try
             {
-                 
+
                 FreeTime freeTime = new FreeTime();
                 freeTime.Day = arrayDays[day];
                 freeTime.StartTime = StartTime.Time.TotalMinutes;
                 freeTime.EndTime = EndTime.Time.TotalMinutes;
-                if(freeTime.EndTime <= freeTime.StartTime)
+                if (freeTime.EndTime <= freeTime.StartTime)
                 {
-                    DisplayAlert("Error", "La fecha de cierre no puede ser menor a la hora de inicio","Acepar");
+                    await DisplayAlert("Error", "La fecha de cierre no puede ser menor a la hora de inicio", "Acepar");
+                    return;
+                }
+
+               bool answer = await DisplayAlert("Verificación", string.Format("Seguro que desea guardar el tiempo: \n {0}, {1} - {2}", freeTime.Day,StartTime.Time,EndTime.Time),"Aceptar","Cancelar");
+                if (!answer)
+                {
+                    return;
                 }
                 using (var data = new DataAccess())
                 {
@@ -63,6 +70,7 @@ namespace DailyTaskManager.Views
                     Label lblMensaje = new Label();
                     lblMensaje.IsVisible = true;
                     data.Insert(freeTime);
+                    data.Dispose();
                 }
             }
             catch (Exception e)

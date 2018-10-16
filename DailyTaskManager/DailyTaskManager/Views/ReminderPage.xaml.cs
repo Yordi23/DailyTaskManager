@@ -16,13 +16,13 @@ namespace DailyTaskManager.Views
     public partial class ReminderPage : ContentPage
     {
 
-        ObservableCollection<string> activitiesName = new ObservableCollection<string>();
-        ObservableCollection<string> CurrentFreeTimes = new ObservableCollection<string>();
-        public int itemCount = 0;
+        public static ObservableCollection<string> activitiesName = new ObservableCollection<string>();
+        public static ObservableCollection<string> CurrentFreeTimes = new ObservableCollection<string>();
+        public int itemCount;
 
         public ReminderPage ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             string dia;
             dia = DateTime.Now.ToString("dddd") + " " + DateTime.Today.Day.ToString();
@@ -32,24 +32,23 @@ namespace DailyTaskManager.Views
             ActivitiesList.ItemsSource = activitiesName;
             FreeTimeList.ItemsSource = CurrentFreeTimes;
         }
-        public void LoadActivities()
+        public static void LoadActivities()
         {
             activitiesName.Clear();
-            ActivitiesList.ItemsSource = null;
+            
             using (var data = new DataAccess())
             {
-                
                 foreach (Activities item in data.GetActivities())
                 {
-                    activitiesName.Add(item.Nombre);
-                    
+                    activitiesName.Add(item.Nombre);  
                 }
-                itemCount = activitiesName.Count;
+                data.Dispose();
             }
-            
         }
-        public void LoadHour()
+        public static void LoadHour()
         {
+            CurrentFreeTimes.Clear();
+            
             string todayDay = DateTime.Now.ToString("dddd");
             using (var data = new DataAccess())
             {
@@ -125,8 +124,8 @@ namespace DailyTaskManager.Views
                     time = initialTime + "-" + endtime;
                     CurrentFreeTimes.Add(time);
                 }
-            }
-
+                data.Dispose();
+            }      
         }
 	}
 }

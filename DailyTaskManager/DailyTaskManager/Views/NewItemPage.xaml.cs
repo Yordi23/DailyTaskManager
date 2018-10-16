@@ -51,12 +51,13 @@ namespace DailyTaskManager.Views
                         Fecha = Item.Date,
                         Lugar = Item.Place,
                         Hora = Item.Time,
-                        Pendiente = Item.Pendent,
+                        Pendiente = true,
                         Prioridad = Item.Priority,
                         RowId = CreateRowID()
                     };
 
                     data.Insert(actividad);
+                    data.Dispose();
                 }
                 
             }

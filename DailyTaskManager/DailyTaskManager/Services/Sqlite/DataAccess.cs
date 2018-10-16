@@ -75,8 +75,6 @@ namespace DailyTaskManager.Services.Sqlite
         }
 
         //User
-
-
         public List<User> GetUser()
         {
             return connection.Table<User>().ToList();
@@ -84,6 +82,7 @@ namespace DailyTaskManager.Services.Sqlite
 
         public void Dispose()
         {
+            connection.Close();
             connection.Dispose();
         }
     }

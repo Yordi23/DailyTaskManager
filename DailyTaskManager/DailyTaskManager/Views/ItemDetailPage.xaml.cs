@@ -50,8 +50,10 @@ namespace DailyTaskManager.Views
 
                 };
                 data.Delete(actividad);
+                data.Dispose();
             }
             Navigation.PopAsync();
+            
         }
         
         private void CompleteActivity(object sender, EventArgs e)
@@ -67,11 +69,12 @@ namespace DailyTaskManager.Views
                     Fecha = Item.Date,
                     Lugar = Item.Place,
                     Hora = Item.Time,
-                    Pendiente = true,
+                    Pendiente = false,
                     Prioridad = Item.Priority,
                     RowId = Item.RowId
                 };
                 data.Update(actividad);
+                data.Dispose();
             }
             Navigation.PopAsync();
         }

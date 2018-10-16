@@ -22,12 +22,14 @@ namespace DailyTaskManager.Services
             using (var data = new DataAccess())
             {
                 mockItems = data.GetActivities();
+                data.Dispose();
             }
             foreach (var activity in mockItems)
             {
                 using (var data = new DataAccess())
                 {
                     RulesList = data.GetRules(activity.Id);
+                    data.Dispose();
                 }
                 Item it = new Item(activity.Id,activity.RowId, (bool)activity.Pendiente,activity.Nombre, activity.Descripcion, activity.Lugar,activity.Fecha,(int) activity.Hora, RulesList, (byte)activity.Prioridad);
                 items.Add(it);

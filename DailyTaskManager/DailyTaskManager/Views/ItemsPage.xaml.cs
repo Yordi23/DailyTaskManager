@@ -19,7 +19,6 @@ namespace DailyTaskManager.Views
     {
         ItemsViewModel viewModel;
 
-
         public ItemsPage()
         {
             InitializeComponent();
