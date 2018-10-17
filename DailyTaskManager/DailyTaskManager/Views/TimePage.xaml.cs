@@ -40,7 +40,7 @@ namespace DailyTaskManager.Views
                     return;
                 }
 
-               bool answer = await DisplayAlert("Verificación", string.Format("Seguro que desea guardar el tiempo: \n {0}, {1} - {2}", freeTime.Day,StartTime.Time,EndTime.Time),"Aceptar","Cancelar");
+               bool answer = await DisplayAlert("Verificación", string.Format("Seguro que desea guardar el tiempo: \n {0}, {1} - {2} ?", freeTime.Day,StartTime.Time,EndTime.Time),"Aceptar","Cancelar");
                 if (!answer)
                 {
                     return;

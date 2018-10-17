@@ -66,6 +66,7 @@ namespace DailyTaskManager.Views
                     endM = int.Parse((item.EndTime % 60).ToString());
                     if (initialH >= 12)
                     {
+                        
                         if (initialH > 12)
                         {
                             initialH -= 12;
@@ -82,6 +83,10 @@ namespace DailyTaskManager.Views
                     }
                     else
                     {
+                        if (initialH == 0)
+                        {
+                            initialH = 12;
+                        }
                         if (initialM < 10)
                         {
                             initialTime = initialH + ":" + "0" + initialM + " AM";
@@ -94,6 +99,7 @@ namespace DailyTaskManager.Views
                     }
                     if (endH >= 12)
                     {
+                        
                         if (endH > 12)
                         {
                             endH -= 12;
@@ -112,6 +118,10 @@ namespace DailyTaskManager.Views
                     }
                     else
                     {
+                        if (endH == 0)
+                        {
+                            endH = 12;
+                        }
                         if (endM < 10)
                         {
                             endtime = endH + ":" + "0" + endM + " AM";
