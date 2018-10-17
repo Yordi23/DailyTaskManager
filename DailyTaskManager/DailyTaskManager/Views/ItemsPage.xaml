@@ -53,7 +53,13 @@
                 <Button Text="+ Agregar Tarea" Clicked="AddItem_Clicked" TextColor="White" BackgroundColor="#3498DB" 
                         HorizontalOptions="FillAndExpand" BorderRadius="80"/>
             </Grid>
-            <Label x:Name="lblCompleted" Text="Ver tareas completadas" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10" TextColor="#3498DB"/>
+            <Label x:Name="lblCompleted" Text="Ver tareas completadas" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10" TextColor="#3498DB">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OpenCompletedTask"
+                        NumberOfTapsRequired="2" /> 
+                </Label.GestureRecognizers>
+            </Label>
         </StackLayout>
         
     </ContentPage.Content>
