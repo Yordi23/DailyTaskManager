@@ -87,7 +87,11 @@ namespace DailyTaskManager.Views
         {
             ReminderPage reminder = new ReminderPage();
             int itemCount = reminder.itemCount;
-            if (itemCount <= 10)
+            if (itemCount == 0)
+            {
+                lblPronóstico.Text = "Libre";
+            }
+            else if ((itemCount > 0) && (itemCount <= 10))
             {
                 lblPronóstico.Text = "Ligero";
             }
