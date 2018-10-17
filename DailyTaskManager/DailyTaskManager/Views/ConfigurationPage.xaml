@@ -57,9 +57,9 @@
                     <TableRoot >
                         <TableSection >
 
-                            <ImageCell ImageSource="timec.png" Text="Tiempo" Tapped="ItemTappedHandler" ClassId="time" Detail="Editar espacios de tiempo libre." DetailColor="#000000"/>
-                            <ImageCell ImageSource="userc.png" Text="Perfil" Tapped="ItemTappedHandler" ClassId="profile" Detail="Ajustes de presentación, imagen de perfil." DetailColor="#000000"/>
-                            <ImageCell ImageSource="paintbrushc.png" Text="Estilo" Tapped="ItemTappedHandler" ClassId="style" Detail="Cambios de apariencia." DetailColor="#000000"/> 
+                            <ImageCell ImageSource="Tiempo.png" Text="Tiempo" Tapped="ItemTappedHandler" ClassId="time" Detail="Editar espacios de tiempo libre." DetailColor="#000000"/>
+                            <ImageCell ImageSource="Perfils.png" Text="Perfil" Tapped="ItemTappedHandler" ClassId="profile" Detail="Ajustes de presentación, imagen de perfil." DetailColor="#000000"/>
+                            <ImageCell ImageSource="Estilo.png" Text="Estilo" Tapped="ItemTappedHandler" ClassId="style" Detail="Cambios de apariencia." DetailColor="#000000"/> 
 
 
                         </TableSection>

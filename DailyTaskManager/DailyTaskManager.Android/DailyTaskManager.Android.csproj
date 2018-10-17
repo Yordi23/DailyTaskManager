@@ -291,5 +291,10 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\userc.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Estilo.png" />
+    <AndroidResource Include="Resources\drawable\Perfils.png" />
+    <AndroidResource Include="Resources\drawable\Tiempo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
