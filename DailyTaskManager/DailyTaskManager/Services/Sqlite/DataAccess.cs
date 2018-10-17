@@ -50,7 +50,10 @@ namespace DailyTaskManager.Services.Sqlite
             catch
             {
 
-            }           
+            }
+            
+            
+            
             
         }
 
@@ -81,13 +84,9 @@ namespace DailyTaskManager.Services.Sqlite
         }
         public List<Activities> GetActivities(bool pendent)
         {
-
-            return connection.Table<Activities>().Where(a => a.Pendiente != pendent /*&& (int.Parse(a.Fecha.Substring(3,2)) >= (DateTime.Today.Month-3))*/).ToList();
-        }
-        public List<Activities> GetActivitiesHistorial(bool pendent)
-        {
             return connection.Table<Activities>().Where(a => a.Pendiente != pendent).ToList();
         }
+
         //Rule
 
         public Rules GetRule(int idActv,int idRule)

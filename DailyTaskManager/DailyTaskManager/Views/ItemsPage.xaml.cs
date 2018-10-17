@@ -74,10 +74,6 @@ namespace DailyTaskManager.Views
             }
         }
         */
-        public async void OpenCompletedTask()
-        {
-            await Navigation.PushAsync(new CompletedTasksPage());
-        }
         protected override void OnAppearing()
         {
             base.OnAppearing();

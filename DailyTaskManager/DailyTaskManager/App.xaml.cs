@@ -4,7 +4,6 @@ using Xamarin.Forms.Xaml;
 using DailyTaskManager.Views;
 using DailyTaskManager.Services;
 
-
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DailyTaskManager
 {
@@ -41,7 +40,6 @@ namespace DailyTaskManager
         protected override void OnSleep()
         {
             // Handle when your app sleeps
-           
         }
 
         protected override void OnResume()
