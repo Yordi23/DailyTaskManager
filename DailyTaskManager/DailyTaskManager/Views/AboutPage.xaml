@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DailyTaskManager.Views.AboutPage"
              xmlns:vm="clr-namespace:DailyTaskManager.ViewModels"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              BackgroundColor="#FFFFFF"
              Title="{Binding Title}">
     
@@ -15,14 +16,26 @@
                 <Label Text="Información" Margin="0,-8,0,3" Style="{StaticResource lblStyleDefault}" TextColor="#FFFFFF" FontSize="28"/>
             </StackLayout>
 
-            <StackLayout BackgroundColor="#ecf0f1" Margin="0,0,0,20">
+            <StackLayout BackgroundColor="#ecf0f1" Margin="0,0,0,0">
                 <Label Text="Acerca" Margin="0,3,0,0" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="18"/>
                 <Label Text="de nosotros" Margin="0,-8,0,5" Style="{StaticResource lblStyleDefault}" TextColor="#000000" FontSize="14"/>
             </StackLayout>
 
-            <StackLayout>
+            <StackLayout BackgroundColor="#FFFFFF" VerticalOptions="CenterAndExpand">
+                <Image Source="Brain128.png" HorizontalOptions="CenterAndExpand" WidthRequest="64" HeightRequest="64"/>
+                <Label Text="Brainex" HorizontalOptions="Center"/>
+                <Label Text="Versión 1.0" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="© 2018 Brainex Inc. All rights reserved" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="Dominican Republic - SDQ" HorizontalOptions="CenterAndExpand"/>
+
 
             </StackLayout>
+
+
+
+
+
+
         </StackLayout>
 
     </ContentPage.Content>

@@ -7,11 +7,11 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Nombre" FontSize="Medium" Margin="17,10,0,0" TextColor="#3498DB"/>
-            <Entry FontSize="Small" x:Name="TxtNombreUsuario"/>
-            <Label Text="Apellido" FontSize="Medium" Margin="17,0,0,0" TextColor="#3498DB" />
-            <Entry FontSize="Small" x:Name="TxtApellidoUsuario"/>
-            <Label Text="Foto de Perfil" FontSize="Medium" Margin="17,0,0,10" TextColor="#3498DB" />
+            <Label Text="Nombre" FontSize="Medium" Margin="15,10,0,0" TextColor="#3498DB"/>
+            <Entry FontSize="Small" x:Name="TxtNombreUsuario" Margin="15,10,0,0"/>
+            <Label Text="Apellido" FontSize="Medium" Margin="15,0,0,0" TextColor="#3498DB" />
+            <Entry FontSize="Small" x:Name="TxtApellidoUsuario" Margin="17,10,0,0"/>
+            <Label Text="Foto de Perfil" FontSize="Medium" Margin="15,0,0,10" TextColor="#3498DB" />
             <Grid HeightRequest="50" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,0">
                 <Button Text="Examinar" TextColor="White" BackgroundColor="#3498DB" Clicked="BuscarImagen"
                         HorizontalOptions="FillAndExpand" BorderRadius="80"/>

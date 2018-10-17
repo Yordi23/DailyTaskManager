@@ -41,7 +41,6 @@
                     </Grid.ColumnDefinitions>
                     
                     <!--Profile Picture Circular-->
-                    
                     <controls:CircleImage Source="https://imgur.com/LmXfzK0.jpg" Aspect="AspectFill" BorderColor="#2C3E50" BorderThickness="2" Margin="22,0,0,60" Grid.RowSpan="6" Grid.Column="0" Grid.Row="0" x:Name="ImageBox"/>
                     <Label Text="Tareas Completadas " Margin="0,-10,0,0" TextColor="#2C3E50" Grid.Row="0" Grid.Column="1" FontSize="16"/>
                     <Label x:Name="lblCompletedTasks" Margin="20,-20,0,0" Text="24/27 " TextColor="#2980B9" FontSize="22" Grid.Row="1" Grid.Column="1"/>
