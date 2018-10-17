@@ -32,16 +32,16 @@
                     >
                     <ListView.ItemTemplate>
                         <DataTemplate >
-                            <ViewCell>
-                                <StackLayout Padding="10">
+                            <ViewCell Height="50">
+                                <StackLayout Padding="5">
                                     <Label Text="{Binding Name}" 
                                     LineBreakMode="NoWrap" 
                                     Style="{DynamicResource ListItemTextStyle}" 
-                                    FontSize="16" />
+                                    FontSize="13" />
                                     <Label Text="{Binding Description}" 
                                     LineBreakMode="NoWrap"
                                     Style="{DynamicResource ListItemDetailTextStyle}"
-                                    FontSize="13" />
+                                    FontSize="12" />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
@@ -49,10 +49,11 @@
                 </ListView>
             </StackLayout>
 
-            <Grid HeightRequest="70" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,15">
+            <Grid HeightRequest="70" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,10">
                 <Button Text="+ Agregar Tarea" Clicked="AddItem_Clicked" TextColor="White" BackgroundColor="#3498DB" 
                         HorizontalOptions="FillAndExpand" BorderRadius="80"/>
             </Grid>
+            <Label x:Name="lblCompleted" Text="Ver tareas completadas" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10" TextColor="#3498DB"/>
         </StackLayout>
         
     </ContentPage.Content>
