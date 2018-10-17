@@ -21,7 +21,7 @@ namespace DailyTaskManager.Services
             List<Rules> RulesList = new List<Rules>();
             using (var data = new DataAccess())
             {
-                mockItems = data.GetActivities();
+                mockItems = data.GetActivities(false);
                 data.Dispose();
             }
             foreach (var activity in mockItems)

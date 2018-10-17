@@ -27,7 +27,7 @@ namespace DailyTaskManager.Views
             string dia;
             dia = DateTime.Now.ToString("dddd") + " " + DateTime.Today.Day.ToString();
             lblDate.Text = dia + ", " + DateTime.Now.ToString("MMMM");
-            
+            LoadUserProfile();
             MessagingCenter.Subscribe<MainPage>(this, "UpdateHome", (arg) => {
                 LoadUserProfile();
                 Reset();
