@@ -18,6 +18,7 @@ namespace DailyTaskManager.Views
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = this.viewModel = viewModel;
+            Algo();
         }
         /*
         public ItemDetailPage()
@@ -30,7 +31,17 @@ namespace DailyTaskManager.Views
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
         }*/
-
+        void Algo()
+        {
+            Item Item = viewModel.Item;
+            string StMes = Item.Date.Substring(3, 2);
+            int mes = int.Parse(StMes);
+            Console.WriteLine(mes);
+            if (mes >= DateTime.Today.Month - 3)
+            {
+                Console.WriteLine(mes);
+            }
+        }
         private void DeleteActivity(object sender, EventArgs e)
         {
             Item Item = viewModel.Item;

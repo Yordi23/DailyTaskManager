@@ -7,6 +7,7 @@ using Xamarin.Forms.Xaml;
 using DailyTaskManager.Models;
 using DailyTaskManager.Services.Sqlite;
 using System.Security.Cryptography;
+using Plugin.LocalNotifications;
 
 namespace DailyTaskManager.Views
 {
@@ -14,6 +15,7 @@ namespace DailyTaskManager.Views
     public partial class NewItemPage : ContentPage
     {
         public Item Item { get; set; }
+        public int id = 0;
 
         public NewItemPage()
         {
@@ -40,7 +42,24 @@ namespace DailyTaskManager.Views
             try
             {
                 MessagingCenter.Send(this, "AddItem", Item);
-                Item.Date = (FechaPicker.Date.Day.ToString() + "/" + FechaPicker.Date.Month.ToString() + "/" +
+                string dia, mes;
+                if ((FechaPicker.Date.Day.ToString().Length == 1)){
+                    dia = "0" + FechaPicker.Date.Day.ToString();
+                }
+                else
+                {
+                    dia = FechaPicker.Date.Day.ToString();
+                }
+                if ((FechaPicker.Date.Month.ToString().Length == 1))
+                {
+                    mes = "0" + FechaPicker.Date.Month.ToString();
+                }
+                else
+                {
+                    mes = FechaPicker.Date.Month.ToString();
+                }
+
+                Item.Date = (dia + "/" + mes + "/" +
                 FechaPicker.Date.Year.ToString());
                 using (var data = new DataAccess())
                 {
@@ -59,6 +78,17 @@ namespace DailyTaskManager.Views
                     data.Insert(actividad);
                     data.Dispose();
                 }
+                
+                if (((Convert.ToDateTime(Item.Date)).Year) == DateTime.Now.Year)
+                {
+                    int notificationDate = (((Convert.ToDateTime(Item.Date)).DayOfYear - DateTime.Now.DayOfYear)) - 1;
+
+                    if (notificationDate >= 0)
+                    {
+                        CrossLocalNotifications.Current.Show("Pendiente para mañana:" + Item.Name, Item.Description, id, DateTime.Now.AddDays(notificationDate));
+                    }
+                }
+
                 
             }
             catch(Exception)

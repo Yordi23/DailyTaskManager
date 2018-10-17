@@ -4,17 +4,8 @@
              x:Class="DailyTaskManager.Views.CompletedTasksPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="CompletedListView"        
-                    >
-                <ListView.ItemTemplate>
-                    <DataTemplate >
-                        <ViewCell Height="50">
-                            <StackLayout Padding="5">
-                                                            <!--Aqui haz tu magic Ricardin-->
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
+            <ListView x:Name="CompletedListView">
+
             </ListView>
         </StackLayout>
     </ContentPage.Content>
