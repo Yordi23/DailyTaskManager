@@ -7,6 +7,7 @@ using Xamarin.Forms.Xaml;
 using DailyTaskManager.Models;
 using DailyTaskManager.Services.Sqlite;
 using System.Security.Cryptography;
+using Plugin.LocalNotifications;
 
 namespace DailyTaskManager.Views
 {
@@ -14,6 +15,7 @@ namespace DailyTaskManager.Views
     public partial class NewItemPage : ContentPage
     {
         public Item Item { get; set; }
+        public int id = 0;
 
         public NewItemPage()
         {
@@ -59,6 +61,17 @@ namespace DailyTaskManager.Views
                     data.Insert(actividad);
                     data.Dispose();
                 }
+                
+                if (((Convert.ToDateTime(Item.Date)).Year) == DateTime.Now.Year)
+                {
+                    int notificationDate = (((Convert.ToDateTime(Item.Date)).DayOfYear - DateTime.Now.DayOfYear)) - 1;
+
+                    if (notificationDate >= 0)
+                    {
+                        CrossLocalNotifications.Current.Show("Pendiente para mañana:" + Item.Name, Item.Description, id, DateTime.Now.AddDays(notificationDate));
+                    }
+                }
+
                 
             }
             catch(Exception)
