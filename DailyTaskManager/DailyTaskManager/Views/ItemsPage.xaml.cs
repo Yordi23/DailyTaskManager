@@ -89,8 +89,7 @@ namespace DailyTaskManager.Views
 
         public void RefreshPronóstico()
         {
-            ReminderPage reminder = new ReminderPage();
-            int itemCount = reminder.itemCount;
+            int itemCount = ReminderPage.itemCount;
             if (itemCount == 0)
             {
                 lblPronóstico.Text = "Libre";

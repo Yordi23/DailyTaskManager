@@ -18,7 +18,7 @@ namespace DailyTaskManager.Views
 
         public static ObservableCollection<string> activitiesName = new ObservableCollection<string>();
         public static ObservableCollection<string> CurrentFreeTimes = new ObservableCollection<string>();
-        public int itemCount;
+        public static int itemCount;
 
         public ReminderPage ()
 		{
@@ -38,10 +38,11 @@ namespace DailyTaskManager.Views
             
             using (var data = new DataAccess())
             {
-                foreach (Activities item in data.GetActivities(false))
+                foreach (Activities item in data.GetActivities(false,DateTime.Today))
                 {
                     activitiesName.Add(item.Nombre);  
                 }
+                itemCount = activitiesName.Count;
                 data.Dispose();
             }
         }

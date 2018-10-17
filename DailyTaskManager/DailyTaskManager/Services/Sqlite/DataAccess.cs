@@ -84,6 +84,30 @@ namespace DailyTaskManager.Services.Sqlite
 
             return connection.Table<Activities>().Where(a => a.Pendiente != pendent /*&& (int.Parse(a.Fecha.Substring(3,2)) >= (DateTime.Today.Month-3))*/).ToList();
         }
+
+        public List<Activities> GetActivities(bool pendent,DateTime today)
+        {
+            string dia, mes,fecha;
+            if ((today.Date.Day.ToString().Length == 1))
+            {
+                dia = "0" + today.Date.Day.ToString();
+            }
+            else
+            {
+                dia = today.Date.Day.ToString();
+            }
+            if ((today.Date.Month.ToString().Length == 1))
+            {
+                mes = "0" + today.Date.Month.ToString();
+            }
+            else
+            {
+                mes = today.Date.Month.ToString();
+            }
+            fecha = dia + "/" + mes + "/" + today.Date.Year;
+            return connection.Table<Activities>().Where(a => a.Pendiente != pendent && a.Fecha == fecha /*&& (int.Parse(a.Fecha.Substring(3, 2)) >= (DateTime.Today.Month - 3))*/).ToList();
+        }
+
         public List<Activities> GetActivitiesHistorial(bool pendent)
         {
             return connection.Table<Activities>().Where(a => a.Pendiente != pendent).ToList();
