@@ -1,0 +1,23 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DailyTaskManager.Views.ItemDetailPage"
+             Title="Tareas Completadas">
+    <StackLayout Spacing="20" Padding="15">
+        <StackLayout  >
+            <ListView x:Name="CompletedListView"   
+                    >
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <ViewCell Height="50">
+                            <StackLayout Padding="5">
+                                <!--Aqui haz tu magia Ricardin-->
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

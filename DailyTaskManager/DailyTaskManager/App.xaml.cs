@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DailyTaskManager.Views;
 using DailyTaskManager.Services;
+using Plugin.LocalNotifications;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DailyTaskManager
@@ -40,6 +41,7 @@ namespace DailyTaskManager
         protected override void OnSleep()
         {
             // Handle when your app sleeps
+            CrossLocalNotifications.Current.Show("Prueba", "Test 1");
         }
 
         protected override void OnResume()

@@ -38,7 +38,7 @@ namespace DailyTaskManager.Views
             
             using (var data = new DataAccess())
             {
-                foreach (Activities item in data.GetActivities())
+                foreach (Activities item in data.GetActivities(false))
                 {
                     activitiesName.Add(item.Nombre);  
                 }
