@@ -19,11 +19,6 @@ namespace DailyTaskManager.Views
     {
         ItemsViewModel viewModel;
 
-        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CompletedTasksPage());
-
-        }
         public ItemsPage()
         {
             InitializeComponent();
@@ -110,8 +105,5 @@ namespace DailyTaskManager.Views
             }
 
         }
-
-
-        
     }
 }
