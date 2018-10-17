@@ -40,7 +40,24 @@ namespace DailyTaskManager.Views
             try
             {
                 MessagingCenter.Send(this, "AddItem", Item);
-                Item.Date = (FechaPicker.Date.Day.ToString() + "/" + FechaPicker.Date.Month.ToString() + "/" +
+                string dia, mes;
+                if ((FechaPicker.Date.Day.ToString().Length == 1)){
+                    dia = "0" + FechaPicker.Date.Day.ToString();
+                }
+                else
+                {
+                    dia = FechaPicker.Date.Day.ToString();
+                }
+                if ((FechaPicker.Date.Month.ToString().Length == 1))
+                {
+                    mes = "0" + FechaPicker.Date.Month.ToString();
+                }
+                else
+                {
+                    mes = FechaPicker.Date.Month.ToString();
+                }
+
+                Item.Date = (dia + "/" + mes + "/" +
                 FechaPicker.Date.Year.ToString());
                 using (var data = new DataAccess())
                 {
